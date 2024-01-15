@@ -1,0 +1,15 @@
+.wrapper {
+  align-items: center;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  gap: 0.3rem;
+  padding: 0.3rem 0.2rem;
+
+  & h1 {
+    color: var(--text-color-primary);
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-top: 5px;
+  }
+}
