@@ -1,0 +1,26 @@
+.wrapper {
+  background-color: var(--background-color);
+  color: var(--text-color-primary);
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+
+  & a {
+    align-items: center;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    font-size: small;
+    font-weight: 400;
+    gap: 10px;
+    height: 100%;
+    padding: 0.5rem 1rem;
+    width: 100%;
+  }
+
+  a:hover {
+    background-color: rgb(239 246 255);
+    color: rgb(37 99 235);
+  }
+}

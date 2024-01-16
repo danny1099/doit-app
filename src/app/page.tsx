@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main>
       <h1>Doit | Home</h1>
-      <Link href={privateRoutes.Workspace}>Workspace</Link>
+      <Link href={privateRoutes.Workspace('xy1i4ohll')}>Workspace</Link>
       <Link href={privateRoutes.Profile}>Profile</Link>
     </main>
   )

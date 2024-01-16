@@ -5,6 +5,6 @@ export const publicRoutes = {
 }
 
 export const privateRoutes = {
-  Workspace: '/private/ws/ka01840jalf',
+  Workspace: (worspace: string) => `/private/ws/${worspace}`,
   Profile: '/private/profile'
 }
