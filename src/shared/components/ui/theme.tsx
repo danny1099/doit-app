@@ -1,12 +1,35 @@
 "use client";
 import * as React from "react";
 import { useTheme } from "next-themes";
-import { Button, Icon } from "@/shared/components/ui";
-import { DropdownMenu, MenuContent, MenuItem, MenuTrigger } from "@/shared/components/ui/dropdown";
+import { useTranslations } from "next-intl";
+import { Button, Icon, IconName } from "@/shared/components/ui";
+import {
+  DropdownMenu,
+  MenuRadioGroup,
+  MenuContent,
+  MenuRadioItem,
+  MenuTrigger,
+} from "@/shared/components/ui/dropdown";
 
 /* prettier-ignore */
 export function ThemeToggle() {
-  const { setTheme } = useTheme();
+  const t = useTranslations("system.theme")
+  const { theme, setTheme } = useTheme();
+
+  const themes = [{
+    name: "light",
+    icon: "sun",
+    text: t("light")
+  },{
+    name: "dark",
+    icon: "moon",
+    text: t("dark")
+  },{
+    name: "system",
+    icon: "system",
+    text: t("system")
+  }]
+
 
   return (
     <DropdownMenu>
@@ -17,19 +40,17 @@ export function ThemeToggle() {
           <span className="sr-only">Toggle theme</span>
         </Button>
       </MenuTrigger>
-      <MenuContent align="end" className="flex flex-col gap-1">
-        <MenuItem onClick={() => setTheme("light")}>
-          <Icon name="sun" className="mr-1 h-4 w-4" />
-          Light
-        </MenuItem>
-        <MenuItem onClick={() => setTheme("dark")}>
-          <Icon name="moon" className="mr-1 h-4 w-4" />
-          Dark
-        </MenuItem>
-        <MenuItem onClick={() => setTheme("system")}>
-          <Icon name="system" className="mr-1 h-4 w-4" />
-          System
-        </MenuItem>
+      <MenuContent align="end">
+        <MenuRadioGroup className="flex flex-col gap-1" value={theme}>
+          {themes.map((t) => {
+            return (
+              <MenuRadioItem place="end" key={t.name} value={t.name} onClick={() => setTheme(t.name)}>
+                <Icon name={t.icon as IconName} className="h-4 w-4 mr-2 text-foreground" />
+                <p className="text-xs">{t.text}</p>
+              </MenuRadioItem>
+            );
+          })}
+        </MenuRadioGroup>
       </MenuContent>
     </DropdownMenu>
   );

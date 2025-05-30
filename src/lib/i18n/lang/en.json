@@ -1,4 +1,18 @@
 {
+  "system": {
+    "loading": "We are organizing some things for you, please wait a moment...",
+    "error": "Something went wrong, please try again later.",
+    "theme": {
+      "dark": "Dark Theme",
+      "light": "Light Theme",
+      "system": "Use system theme"
+    },
+    "langs": {
+      "en": "English",
+      "es": "Spanish"
+    }
+  },
+
   "landing": {
     "title": "Wellcome to DoIt",
     "description": ""

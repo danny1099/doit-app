@@ -25,6 +25,7 @@ export const iconName = {
   archive: "archive",
   tag: "bookmark",
   system: "laptop",
+  translate: "translate",
 };
 
 export type IconName = keyof typeof iconName;

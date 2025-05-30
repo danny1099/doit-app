@@ -1,4 +1,18 @@
 {
+  "system": {
+    "loading": "Estamos organizando algunas cosas para ti, por favor espera un momento...",
+    "error": "Algo salió mal, por favor inténtalo de nuevo más tarde.",
+    "theme": {
+      "dark": "Tema Oscuro",
+      "light": "Tema Claro",
+      "system": "Usar tema del sistema"
+    },
+    "langs": {
+      "en": "Inglés",
+      "es": "Español"
+    }
+  },
+
   "landing": {
     "title": "Bienvenido a DoIt",
     "description": ""

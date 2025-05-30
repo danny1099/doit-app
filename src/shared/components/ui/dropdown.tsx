@@ -71,27 +71,28 @@ export const MenuItem = React.forwardRef<
 
 /* interface to change change icon */
 interface IconProps {
-  iconName?: IconName;
-  iconClassName?: string;
+  indicator?: IconName;
+  styled?: string;
+  place?: "start" | "end";
 }
 
 /* prettier-ignore */
 export const MenuCheckboxItem = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.CheckboxItem>,
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.CheckboxItem> & IconProps
->(({ className, children, checked, iconName = "check", iconClassName, ...props }, ref) => (
+>(({ className, children, checked, indicator = "check", styled, place = "start", ...props }, ref) => (
   <DropdownMenuPrimitive.CheckboxItem
     ref={ref}
-    className={cn('relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-xs outline-none transition-colors focus:bg-secondary focus:text-secondary-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50', className)}
+    className={cn('relative flex cursor-default select-none items-center rounded-sm py-1.5 text-xs outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50', place === "start" ? "pl-8 pr-2" : "pl-2 pr-8" ,className)}
     checked={checked}
     {...props}
   >
-    <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+    {children}
+    <span className={cn("absolute flex h-4 w-4 items-center justify-center", place === "start" ? 'left-2' : 'right-2')}>
       <DropdownMenuPrimitive.ItemIndicator>
-        <Icon name={iconName} className={cn('h-4 w-4 fill-current', iconClassName)} />
+        <Icon name={indicator} className={cn('h-4 w-4 text-tertiary', styled)} />
       </DropdownMenuPrimitive.ItemIndicator>
     </span>
-    {children}
   </DropdownMenuPrimitive.CheckboxItem>
 ))
 
@@ -99,18 +100,18 @@ export const MenuCheckboxItem = React.forwardRef<
 export const MenuRadioItem = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.RadioItem>,
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.RadioItem> & IconProps
->(({ className, children, iconName = 'dot', iconClassName, ...props }, ref) => (
+>(({ className, children, indicator = 'dot', styled, place = 'start',...props }, ref) => (
   <DropdownMenuPrimitive.RadioItem
     ref={ref}
-    className={cn('relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-secondary focus:text-secondary-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50',className)}
+    className={cn('relative flex cursor-default select-none items-center rounded-sm py-1.5 text-xs outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50', place === "start" ? "pl-8 pr-2" : "pl-2 pr-8"  ,className)}
     {...props}
   >
-    <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+    {children}
+    <span className={cn("absolute flex h-4 w-4 items-center justify-center", place === "start" ? 'left-2' : 'right-2')}>
       <DropdownMenuPrimitive.ItemIndicator>
-        <Icon name={iconName} className={cn('h-4 w-4 fill-current', iconClassName)} />
+        <Icon name={indicator} className={cn('h-4 w-4 text-tertiary', styled)} />
       </DropdownMenuPrimitive.ItemIndicator>
     </span>
-    {children}
   </DropdownMenuPrimitive.RadioItem>
 ))
 
