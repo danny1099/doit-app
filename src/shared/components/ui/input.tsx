@@ -2,14 +2,14 @@
 import * as React from "react";
 import { type VariantProps } from "class-variance-authority";
 import { inputVariants } from "@/shared/components/variants";
-import { Icon } from "@/shared/components/ui/icon";
+import { Icon, IconName } from "@/shared/components/ui/icon";
 import { cn } from "@/shared/utils";
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement>,
     VariantProps<typeof inputVariants> {
   place?: "left" | "right";
-  icon?: string;
+  icon?: IconName;
   isBordered?: boolean;
   child: React.ReactNode;
 }
