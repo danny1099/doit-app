@@ -1,7 +1,9 @@
 "use client";
 import { ComponentProps } from "react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
+import { SessionProvider } from "next-auth/react";
 
+/* prettier-ignore */
 export function ClientProviders({ children, ...props }: ComponentProps<typeof NextThemesProvider>) {
   return (
     <NextThemesProvider
@@ -11,7 +13,7 @@ export function ClientProviders({ children, ...props }: ComponentProps<typeof Ne
       disableTransitionOnChange
       enableSystem
     >
-      {children}
+     <SessionProvider> {children} </SessionProvider>
     </NextThemesProvider>
   );
 }

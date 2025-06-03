@@ -4,6 +4,6 @@
   "singleQuote": false,
   "ternaryOperator": "off",
   "tabWidth": 2,
-  "printWidth": 110,
+  "printWidth": 120,
   "plugins": ["prettier-plugin-tailwindcss"]
 }

@@ -9,6 +9,7 @@ import {
   MenuContent,
   MenuRadioItem,
   MenuTrigger,
+  MenuLabel,
 } from "@/shared/components/ui/dropdown";
 
 /* prettier-ignore */
@@ -41,6 +42,7 @@ export function ThemeToggle() {
         </Button>
       </MenuTrigger>
       <MenuContent align="end">
+        <MenuLabel>{t("label")}</MenuLabel>
         <MenuRadioGroup className="flex flex-col gap-1" value={theme}>
           {themes.map((t) => {
             return (

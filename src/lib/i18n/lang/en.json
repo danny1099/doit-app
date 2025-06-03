@@ -2,10 +2,17 @@
   "system": {
     "loading": "We are organizing some things for you, please wait a moment...",
     "error": "Something went wrong, please try again later.",
+    "validation": {
+      "required": "This field is required",
+      "invalid_email": "Please enter a valid email address",
+      "invalid_password": "Password must be at least 8 characters long"
+    },
+
     "theme": {
-      "dark": "Dark Theme",
-      "light": "Light Theme",
-      "system": "Use system theme"
+      "dark": "Dark",
+      "light": "Light",
+      "system": "Use system theme",
+      "label": "Theme"
     },
     "langs": {
       "en": "English",

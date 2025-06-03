@@ -1,10 +1,6 @@
-import { sleep } from "@/shared/utils";
-
 export default async function SignIn() {
-  await sleep(3000);
-
   return (
-    <section>
+    <section className="size-full bg-emerald-50">
       <h1>Sign In</h1>
     </section>
   );

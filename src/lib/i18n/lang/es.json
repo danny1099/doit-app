@@ -2,10 +2,17 @@
   "system": {
     "loading": "Estamos organizando algunas cosas para ti, por favor espera un momento...",
     "error": "Algo salió mal, por favor inténtalo de nuevo más tarde.",
+    "validation": {
+      "required": "Este campo es requerido",
+      "invalid_email": "Por favor ingrese una dirección de correo electrónico válida",
+      "invalid_password": "La contraseña debe tener al menos 8 caracteres"
+    },
+
     "theme": {
-      "dark": "Tema Oscuro",
-      "light": "Tema Claro",
-      "system": "Usar tema del sistema"
+      "dark": "Oscuro",
+      "light": "Claro",
+      "system": "Usar tema del sistema",
+      "label": "Tema"
     },
     "langs": {
       "en": "Inglés",
