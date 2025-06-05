@@ -76,14 +76,7 @@ export const FormLabel = React.forwardRef<
 >(({ className, ...props }, ref) => {
   const { error, formItemId } = useFormField();
 
-  return (
-    <label
-      ref={ref}
-      className={cn("text-xs text-foreground", error && "text-destructive", className)}
-      htmlFor={formItemId}
-      {...props}
-    />
-  );
+  return <label ref={ref} className={cn("text-xs text-foreground", className)} htmlFor={formItemId} {...props} />;
 });
 
 export const FormControl = React.forwardRef<React.ElementRef<typeof Slot>, React.ComponentPropsWithoutRef<typeof Slot>>(
@@ -106,7 +99,7 @@ export const FormDescription = React.forwardRef<HTMLParagraphElement, React.HTML
   ({ className, ...props }, ref) => {
     const { formDescriptionId } = useFormField();
     return (
-      <p ref={ref} id={formDescriptionId} className={cn("text-2xs text-foreground-muted", className)} {...props} />
+      <p ref={ref} id={formDescriptionId} className={cn("text-3xs text-foreground-muted", className)} {...props} />
     );
   }
 );

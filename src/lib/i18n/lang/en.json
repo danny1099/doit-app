@@ -23,5 +23,19 @@
   "landing": {
     "title": "Wellcome to DoIt",
     "description": ""
+  },
+  "auth": {
+    "form": {
+      "email": "Email",
+      "email_placeholder": "Please enter your email",
+      "password": "Password",
+      "password_placeholder": "Enter your current password",
+      "password_help": "Password must be at least 8 characters and contain at least one number",
+      "submit": "Continue with Email"
+    },
+    "sign_in": {
+      "title": "Sign In to DoIt",
+      "description": "Sign in to your account to continue and manage your tasks"
+    }
   }
 }

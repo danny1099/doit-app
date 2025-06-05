@@ -31,7 +31,6 @@ export function ThemeToggle() {
     text: t("system")
   }]
 
-
   return (
     <DropdownMenu>
       <MenuTrigger asChild>

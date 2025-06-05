@@ -26,6 +26,10 @@ export const iconName = {
   tag: "bookmark",
   system: "laptop",
   translate: "translate",
+  email: "envelope",
+  password: "lock",
+  google: "google",
+  microsoft: "microsoft",
 };
 
 export type IconName = keyof typeof iconName;
