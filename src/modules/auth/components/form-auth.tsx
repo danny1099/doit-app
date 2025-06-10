@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { getPrivateRoute } from "@/config/routes";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/shared/components/ui/form";
-import { Input, Button } from "@/shared/components/ui";
+import { Input, Button, InputPassword } from "@/shared/components/ui";
 import { AuthSchema, authSchema } from "@/modules/auth/schema";
 import { FormAuthOauth } from "./form-auth-oauth";
 
@@ -62,7 +62,7 @@ export const FormAuth = () => {
                 <FormItem>
                   <FormLabel>{t("form.password")}</FormLabel>
                   <FormControl>
-                    <Input
+                    <InputPassword
                       {...field}
                       type="text"
                       placeholder={t("form.password_placeholder")}

@@ -8,6 +8,7 @@ export * from "./dropdown";
 export * from "./form";
 export * from "./heading";
 export * from "./icon";
+export * from "./input-password";
 export * from "./input";
 export * from "./lang";
 export * from "./loader";

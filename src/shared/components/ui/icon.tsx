@@ -30,6 +30,8 @@ export const iconName = {
   password: "lock",
   google: "google",
   microsoft: "microsoft",
+  eye_open: "eye",
+  eye_close: "eye-slash",
 };
 
 export type IconName = keyof typeof iconName;
