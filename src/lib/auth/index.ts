@@ -1,11 +1,15 @@
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
 import { SessionStrategy } from "next-auth";
+import { PrismaAdapter } from "@auth/prisma-adapter";
+import { prisma } from "@/lib/db";
+import { api } from "@/trpc/server";
 
 export const authOptions = {
   pages: {
     signIn: "/auth/sign-in",
   },
+  adapter: PrismaAdapter(prisma),
   providers: [
     CredentialsProvider({
       name: "Email",
@@ -14,10 +18,9 @@ export const authOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        if (credentials?.email === "test@test.com" && credentials.password === "password") {
-          return { id: "1", email: "test@test.com" };
-        }
-        return null;
+        const { email, password } = credentials as { email: string; password: string };
+        const user = await api.auth.signInWithEmail({ email, password });
+        return user;
       },
     }),
     GoogleProvider({
@@ -38,5 +41,5 @@ export const authOptions = {
       return session;
     },
   },
-  secret: process.env.NEXT_AUTH_SECRET,
+  secret: process.env.NEXTAUTH_URL,
 };

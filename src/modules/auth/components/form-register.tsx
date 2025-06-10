@@ -1,16 +1,23 @@
 "use client";
-import { z } from "zod";
+import { useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { getPrivateRoute } from "@/config/routes";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/shared/components/ui/form";
 import { Input, Button, InputPassword } from "@/shared/components/ui";
 import { AuthSchema, authSchema } from "@/modules/auth/schema";
-import { FormAuthOauth } from "./form-auth-oauth";
+import { FormAuthOauth } from "./form-oauth";
+import { api } from "@/trpc/client";
 
-export const FormAuth = () => {
+export const FormRegister = () => {
   const t = useTranslations("auth");
+  const [isPending, startTransition] = useTransition();
+  const router = useRouter();
+  const redirectTo = getPrivateRoute("overview");
+  const apiServices = api.auth.signUpWithEmail.useMutation();
 
   const form = useForm<AuthSchema>({
     resolver: zodResolver(authSchema),
@@ -24,7 +31,18 @@ export const FormAuth = () => {
   const { formState } = form;
 
   const onSubmit = async (data: AuthSchema) => {
-    console.log(data);
+    startTransition(async () => {
+      await apiServices
+        .mutateAsync(data)
+        .then(async (res) => {
+          await signIn("credentials", {
+            email: res?.email,
+            password: res?.password,
+            redirect: false,
+          }).then(() => router.push(redirectTo));
+        })
+        .catch((error) => console.log(error));
+    });
   };
 
   return (
@@ -76,7 +94,7 @@ export const FormAuth = () => {
                 </FormItem>
               )}
             />
-            <Button type="submit" className="mt-2 w-full" icon="arrow_right">
+            <Button type="submit" className="mt-2 w-full" icon="arrow_right" isLoading={isPending}>
               {t("form.submit")}
             </Button>
           </div>

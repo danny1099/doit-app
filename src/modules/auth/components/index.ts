@@ -1,2 +1,3 @@
-export * from "./form-auth-oauth";
-export * from "./form-auth";
+export * from "./form-login";
+export * from "./form-oauth";
+export * from "./form-register";

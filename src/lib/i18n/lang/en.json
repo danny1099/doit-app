@@ -34,8 +34,12 @@
       "submit": "Continue with Email"
     },
     "sign_in": {
-      "title": "Sign In to DoIt",
+      "title": "Welcome to DoIt",
       "description": "Sign in to your account to continue and manage your tasks"
+    },
+    "sign_up": {
+      "title": "Welcome to DoIt",
+      "description": "Create your account to get started and manage your tasks"
     }
   }
 }

@@ -23,5 +23,23 @@
   "landing": {
     "title": "Bienvenido a DoIt",
     "description": ""
+  },
+  "auth": {
+    "form": {
+      "email": "Correo",
+      "email_placeholder": "Por favor ingrese su correo electrónico",
+      "password": "Contraseña",
+      "password_placeholder": "Ingresa tu contraseña actual",
+      "password_help": "La contraseña debe tener al menos 8 caracteres longitud y contener al menos una mayúscula, una minúscula y un número",
+      "submit": "Continuar con correo electrónico"
+    },
+    "sign_in": {
+      "title": "Bienvenido de vuelta a DoIt",
+      "description": "Inicia sesión con tu cuenta para continuar y gestionar tus tareas"
+    },
+    "sign_up": {
+      "title": "Bienvenido a DoIt",
+      "description": "Crea una cuenta para comenzar a gestionar tus tareas"
+    }
   }
 }
