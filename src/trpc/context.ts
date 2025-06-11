@@ -1,11 +1,12 @@
+import { getAuthSession } from "@/lib/auth";
 import { prisma } from "@/lib/db";
-import { getServerSession } from "next-auth";
 
 export const createTRPCContext = async (opts: { headers: Headers }) => {
-  const user = await getServerSession();
-  console.log("user on context", user);
+  const user: any = await getAuthSession();
+
   return {
     db: prisma,
+    user,
     ...opts,
   };
 };

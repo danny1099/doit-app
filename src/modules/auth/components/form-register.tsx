@@ -36,8 +36,8 @@ export const FormRegister = () => {
         .mutateAsync(data)
         .then(async (res) => {
           await signIn("credentials", {
-            email: res?.email,
-            password: res?.password,
+            email: data?.email,
+            password: data?.password,
             redirect: false,
           }).then(() => router.push(redirectTo));
         })

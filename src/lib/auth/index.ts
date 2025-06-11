@@ -1,7 +1,7 @@
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
-import { SessionStrategy } from "next-auth";
-import { PrismaAdapter } from "@auth/prisma-adapter";
+import { getServerSession, SessionStrategy } from "next-auth";
+import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { prisma } from "@/lib/db";
 import { api } from "@/trpc/server";
 
@@ -32,14 +32,16 @@ export const authOptions = {
     strategy: "jwt" as SessionStrategy,
   },
   callbacks: {
-    async jwt({ token, user }: { token: any; user: any }) {
+    jwt({ token, user }: { token: any; user: any }) {
       if (user) token.id = user.id;
       return token;
     },
-    async session({ session, token }: { session: any; token: any }) {
+    session({ session, token }: { session: any; token: any }) {
       if (session.user) session.user.id = token.id as string;
       return session;
     },
   },
-  secret: process.env.NEXTAUTH_URL,
+  secret: process.env.NEXTAUTH_SECRET,
 };
+
+export const getAuthSession = async () => await getServerSession(authOptions);
