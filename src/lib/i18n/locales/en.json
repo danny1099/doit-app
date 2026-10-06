@@ -1,0 +1,390 @@
+{
+  "validation": {
+    "required": "This field is required",
+    "invalid_email": "Please enter a valid email address",
+    "invalid_password_required": "Password field is required",
+    "invalid_password": "Password must be at least 8 characters long",
+    "invalid_name": "Name  must be at least 3 characters long",
+    "invalid_otp": "Please enter a valid verification code",
+    "invalid_processor": "Please select a payment processor"
+  },
+  "messages": {
+    "account_created": {
+      "title": "Account created",
+      "content": "Welcome to Doit. In a moment you will receive an email to verify your account."
+    },
+    "account_not_found": {
+      "title": "Account not found",
+      "content": "We couldn’t find this account."
+    },
+    "async_validation_not_supported": {
+      "title": "Validation not supported",
+      "content": "This validation method isn’t supported."
+    },
+    "callback_url_required": {
+      "title": "Redirect needed",
+      "content": "A redirect destination is required to continue."
+    },
+    "credential_account_not_found": {
+      "title": "Account not linked",
+      "content": "We couldn’t find a linked account for this action."
+    },
+    "cross_site_navigation_login_blocked": {
+      "title": "Action blocked",
+      "content": "This request couldn’t be completed for security reasons."
+    },
+    "email_already_verified": {
+      "title": "Email already verified",
+      "content": "Thanks for confirming your Doit account. You're all set to continue."
+    },
+    "email_can_not_be_updated": {
+      "title": "Email can’t be updated",
+      "content": "This email can’t be updated right now."
+    },
+    "email_mismatch": {
+      "title": "Email mismatch",
+      "content": "The email doesn’t match the one we expected."
+    },
+    "email_not_verified": {
+      "title": "Email not verified",
+      "content": "It looks like your email has not been verified yet. Don’t worry, we’ll send you another email."
+    },
+    "failed_to_create_session": {
+      "title": "Session not started",
+      "content": "We couldn’t start your session. Please try again."
+    },
+    "failed_to_create_user": {
+      "title": "Account not created",
+      "content": "Something went wrong while creating your account. Let’s try again."
+    },
+    "failed_to_create_verification": {
+      "title": "Verification failed",
+      "content": "We couldn’t send the verification email. Try again in a moment."
+    },
+    "failed_to_get_session": {
+      "title": "Session expired",
+      "content": "Your session has expired. Please sign in again to continue."
+    },
+    "failed_to_get_user_info": {
+      "title": "Couldn’t load account",
+      "content": "We couldn’t load your account details. Please try again."
+    },
+    "failed_to_unlink_last_account": {
+      "title": "Action not allowed",
+      "content": "You need at least one sign-in method linked to your account."
+    },
+    "failed_to_update_user": {
+      "title": "Changes not saved",
+      "content": "We couldn’t save your changes. Give it another try."
+    },
+    "field_not_allowed": {
+      "title": "Field not allowed",
+      "content": "One of the provided fields isn’t allowed."
+    },
+    "id_token_not_supported": {
+      "title": "Sign-in not supported",
+      "content": "This sign-in method isn’t supported."
+    },
+    "image-size": {
+      "title": "Image too large",
+      "content": "Your image needs to be under 5MB to keep things smooth and speedy."
+    },
+    "image-type": {
+      "title": "Invalid image",
+      "content": "Looks like that’s not an image we can use. Please upload a valid one so we can work with it."
+    },
+    "invalid_callback_url": {
+      "title": "Invalid redirect",
+      "content": "This redirect destination isn’t valid."
+    },
+    "invalid_email_or_password": {
+      "title": "Check your details",
+      "content": "Your credentials details need another look"
+    },
+    "invalid_email": {
+      "title": "Invalid email",
+      "content": "That email doesn’t look quite right. Check and try again."
+    },
+    "invalid_error_callback_url": {
+      "title": "Invalid redirect",
+      "content": "This redirect destination isn’t valid."
+    },
+    "invalid_new_user_callback_url": {
+      "title": "Invalid redirect",
+      "content": "This redirect destination isn’t valid."
+    },
+    "invalid_origin": {
+      "title": "Invalid request",
+      "content": "This request came from an invalid source."
+    },
+    "invalid_otp": {
+      "title": "Invalid code",
+      "content": "It looks like this verification code can’t be used. Try requesting a new one."
+    },
+    "invalid_password": {
+      "title": "Check your details",
+      "content": "Your credentials details need another look"
+    },
+    "invalid_redirect_url": {
+      "title": "Invalid redirect",
+      "content": "This redirect destination isn’t valid."
+    },
+    "invalid_token": {
+      "title": "Invalid token",
+      "content": "It looks like this verification code can’t be used. Try requesting a new one."
+    },
+    "linked_account_already_exists": {
+      "title": "Account already linked",
+      "content": "It looks like this account is already linked."
+    },
+    "missing_field": {
+      "title": "Missing information",
+      "content": "A required field is missing."
+    },
+    "missing_or_null_origin": {
+      "title": "Invalid request",
+      "content": "This request is missing required security information."
+    },
+    "no-params": {
+      "title": "Missing parameters",
+      "content": "Ops, this need some params to work properly"
+    },
+    "otp_expired": {
+      "title": "Code expired",
+      "content": "It looks like this verification code has expired. Try requesting a new one."
+    },
+    "otp_resend": {
+      "title": "Code on the way",
+      "content": "A fresh verification code is on its way to your inbox."
+    },
+    "password_changed": {
+      "title": "Password updated",
+      "content": "Password changed successfully. Let’s keep going ✨"
+    },
+    "password_mismatch": {
+      "title": "Passwords don’t match",
+      "content": "hmm... your password didn't match. Let's try again."
+    },
+    "password_too_long": {
+      "title": "Password too long",
+      "content": "Your password is a bit too long. Try shortening it."
+    },
+    "password_too_short": {
+      "title": "Password too short",
+      "content": "Your password is a bit too short. Add a few more characters."
+    },
+    "provider_not_found": {
+      "title": "Option not available",
+      "content": "This sign-in option isn’t available right now."
+    },
+    "session_expired": {
+      "title": "Session expired",
+      "content": "Your session has expired. Please sign in again to continue."
+    },
+    "session_not_fresh": {
+      "title": "Session needs refresh",
+      "content": "For your security, please sign in again to continue."
+    },
+    "social_account_already_linked": {
+      "title": "Account already linked",
+      "content": "This social account is already linked."
+    },
+    "unknown_error": {
+      "title": "Something went wrong",
+      "content": "Hmm... something unexpected happened. Don’t worry, we’re on it."
+    },
+    "user_already_exists_use_another_email": {
+      "title": "Email already in use",
+      "content": "Looks like you're already part of our community. Try using another email."
+    },
+    "user_already_exists": {
+      "title": "Account already exists",
+      "content": "Looks like you're already part of our community"
+    },
+    "user_already_has_password": {
+      "title": "Password already set",
+      "content": "This account already has a password set. Use it to continue."
+    },
+    "user_email_not_found": {
+      "title": "No account found",
+      "content": "It looks like you don't have an account yet. Sign up instead."
+    },
+    "user_not_found": {
+      "title": "User not found",
+      "content": "We couldn't find your account"
+    },
+    "validation_error": {
+      "title": "Check your details",
+      "content": "Some details need another look."
+    },
+    "verification_email_not_enabled": {
+      "title": "Verification not available",
+      "content": "Email verification isn’t enabled for this account."
+    },
+    "unauthorized": {
+      "title": "Action not allowed",
+      "content": "It appears that you are not authorized to perform this action. Please try again."
+    }
+  },
+
+  "lang": {
+    "tooltip": "Language",
+    "locales": {
+      "es": "Español",
+      "en": "English"
+    }
+  },
+  "theme": {
+    "tooltip": "Theme",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "loading": {
+    "title": "Just a moment",
+    "description": "We are organizing some things for you"
+  },
+
+  "menu": {
+    "platform": "Platform",
+    "logOut": "Log out",
+    "items": {
+      "overview": "Overview"
+    }
+  },
+
+  "marketing": {
+    "title": "Welcome to DoIt",
+    "description": "DoIt is a task manager that makes organization simple, visual, and powerful. Get started today and take control of your tasks!",
+    "metadata": {
+      "title": "Welcome to DoIt",
+      "description": "DoIt is a task manager that makes organization simple, visual, and powerful. Get started today and take control of your tasks!"
+    }
+  },
+
+  "sign_up": {
+    "title": "Plan it. Do it.",
+    "description": "Turn messy thoughts into clear tasks and know exactly what to focus on today.",
+    "navigate": {
+      "text": "Already have an account?",
+      "link": "Sign in"
+    },
+    "form": {
+      "email": {
+        "label": "Email",
+        "placeholder": "Enter your email address"
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "Create a secure password"
+      },
+      "continue-button": "Continue with Email",
+      "cancel-button": "Cancel"
+    },
+    "verify_email": {
+      "title": "Welcome to Doit",
+      "intro": "Capture everything. Focus on what matters. ✨",
+      "body": "Doit turns your notes into organized tasks, suggests what to tackle first, and keeps every task's resources in one place.",
+      "description": "Before you start, there's just one quick step left:",
+      "text_token_link": "Verify your email to activate your account.",
+      "explanation": "Once verified, you can write your first task in plain words and let Doit organize it for you.",
+      "disclaimer": "If you didn't create this account, you can safely ignore this message.",
+      "outro": "Let's get it done,",
+      "brand_sign": "The Doit Team",
+      "footer": "Built for people who get things done.",
+      "rights_reserved": "All rights reserved.",
+      "subject": "Welcome to Doit — Your tasks are waiting"
+    },
+    "accept_terms_and_privacy": "By signing up you agree to <terms>Terms of service</terms> and <policy>Privacy Policy</policy> of Doit.",
+    "metadata": {
+      "title": "Get Started",
+      "description": "Get started with Doit, the task manager that organizes your to-dos for you."
+    }
+  },
+  "sign_in": {
+    "title": "Focus it. Finish it.",
+    "description": "Sign in to see today's focus and pick up right where you left off.",
+    "last_method": "Last used",
+    "or": "or continue with",
+    "navigate": {
+      "text": "New to Doit?",
+      "link": "Sign up"
+    },
+    "form": {
+      "email": {
+        "label": "Email",
+        "placeholder": "Enter your email address"
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "Enter your password"
+      },
+      "continue-button": "Continue with Email",
+      "cancel-button": "Cancel"
+    },
+    "forgot-password": "Forgot password?",
+    "accept_terms_and_privacy": "By signing in you accept <terms>Terms of service</terms> and <policy>Privacy Policy</policy> of Doit.",
+    "metadata": {
+      "title": "Sign In",
+      "description": "Sign in to your Doit account and get back to your tasks."
+    }
+  },
+  "forgot_password": {
+    "title": "Reset it. Get back to it.",
+    "description": "Set a new password and you'll be back to your tasks in a minute.",
+    "step": "Step {step} of 3",
+    "form": {
+      "email": {
+        "label": "Email",
+        "placeholder": "Enter your email address"
+      },
+      "opt_code": {
+        "label": "Enter your verification code",
+        "placeholder": "We sent this code to your email"
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "Enter your new password"
+      },
+      "confirm-password": {
+        "label": "Confirm",
+        "placeholder": "Confirm your new password"
+      },
+      "submit-button": "Continue",
+      "reset-button": "Reset Password",
+      "cancel-button": "Cancel"
+    },
+    "navigate": "Not sure? Let's go back.",
+    "time-left": "Time left to verify",
+    "time-out": "Time's up. Your code has expired.",
+    "resend-code": "Send me a new code",
+    "steps": {
+      "enter-email": {
+        "title": "Enter your email",
+        "subtitle": "Use the email linked to your Doit account"
+      },
+      "enter-code": {
+        "title": "Check your inbox",
+        "subtitle": "We sent you a code to confirm it's you"
+      },
+      "reset-password": {
+        "title": "Set your password",
+        "subtitle": "Choose a new password and confirm it to continue"
+      }
+    },
+    "reset_email": {
+      "title": "Reset your password",
+      "body": "Use this one-time code to continue securely.",
+      "expire_time": "This code expires in 5 minutes.",
+      "disclaimer": "If you didn't request this, you can safely ignore this email. Your account is still protected.",
+      "outro": "Securely yours,",
+      "brand_sign": "The Doit Team",
+      "footer": "Built for people who get things done.",
+      "rights_reserved": "All rights reserved.",
+      "subject": "Your verification code is ready"
+    },
+    "metadata": {
+      "title": "Forgot Password",
+      "description": "Forgot your password? No worries, we'll get you back in."
+    }
+  }
+}
