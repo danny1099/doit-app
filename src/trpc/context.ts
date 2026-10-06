@@ -1,10 +1,14 @@
 import { prisma } from "@/lib/db/prisma";
+import { getAuthSession } from "@/modules/auth/session";
 
 export const createTRPCContext = async (opts: { headers: Headers }) => {
+  const auth = await getAuthSession();
+
   return {
     ...opts,
     db: prisma,
-    userId: "123", // TODO: Implement user authentication and retrieve the user ID from the request headers or session
+    userId: auth?.user.id,
+    workspaceId: auth?.user.activeWorkspaceId as string | undefined,
   };
 };
 
