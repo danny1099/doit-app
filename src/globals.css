@@ -36,7 +36,7 @@
   --card-foreground: hsl(0, 0%, 98%);
   --popover: hsl(240, 10%, 3.9%);
   --popover-foreground: hsl(0, 0%, 98%);
-  --primary: oklch(0.49 0.22 264 / 90%);
+  --primary: oklch(0.49 0.22 264);
   --primary-foreground: hsl(0, 0%, 98%);
   --secondary: hsl(240 7.6% 4.5%);
   --secondary-foreground: hsl(0, 0%, 98%);

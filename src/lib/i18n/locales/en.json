@@ -255,6 +255,20 @@
   "marketing": {
     "title": "Welcome to DoIt",
     "description": "DoIt is a task manager that makes organization simple, visual, and powerful. Get started today and take control of your tasks!",
+    "nav": {
+      "how_it_works": "How it works",
+      "features": "Features",
+      "pricing": "Pricing",
+      "sign_in": "Sign in",
+      "get_started": "Get started"
+    },
+    "hero": {
+      "badge": "New · AI-powered",
+      "title": "Write the chaos. <highlight>DoIt</highlight> Make it happen.",
+      "subtitle": "Turn scattered thoughts into clear tasks. Let AI organize, prioritize, and suggest what to tackle today—so you can get back to doing what matters.",
+      "cta_primary": "Get started for free",
+      "cta_secondary": "See how it works"
+    },
     "metadata": {
       "title": "Welcome to DoIt",
       "description": "DoIt is a task manager that makes organization simple, visual, and powerful. Get started today and take control of your tasks!"

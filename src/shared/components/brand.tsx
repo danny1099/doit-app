@@ -9,7 +9,7 @@ export const Brand = ({ className, ...props }: Props) => {
       {...props}
       className={cn("text-foreground flex items-center text-2xl font-semibold", brandFont.className, className)}
     >
-      Doit <span className="bg-tertiary mt-2.5 ml-1 inline-block h-2 w-2 rounded-full" />
+      Doit <span className="bg-tertiary mt-2.5 ml-1 inline-block size-1.5 rounded-full" />
     </span>
   );
 };
