@@ -11,7 +11,7 @@ export const Hero = async () => {
   return (
     <section className="relative overflow-hidden">
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-        <div className="bg-grid absolute inset-0 mask-[radial-gradient(ellipse_65%_60%_at_50%_35%,black,transparent)]" />
+        <div className="absolute inset-0 mask-[radial-gradient(ellipse_65%_60%_at_50%_35%,black,transparent)]" />
         <div className="bg-tertiary/15 absolute top-24 left-1/2 size-105 -translate-x-1/2 rounded-full blur-3xl" />
       </div>
       <div className="mx-auto flex w-full max-w-6xl flex-col items-center px-4 pt-20 pb-24 text-center md:px-6 md:pt-28">

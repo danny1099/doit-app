@@ -267,7 +267,142 @@
       "title": "Write the chaos. <highlight>Doit.</highlight> It turns into a plan.",
       "subtitle": "Turn scattered thoughts into clear tasks. Let AI organize, prioritize, and suggest what to tackle today—so you can get back to doing what matters.",
       "cta_primary": "Get started for free",
-      "cta_secondary": "See how it works"
+      "cta_secondary": "See how it works",
+      "visual": {
+        "label": "Quick capture",
+        "input": "finish the pitch deck. email Sarah about the offsite. pick up the dry cleaning near the office. review Q3 numbers before Friday.",
+        "organizing": "Organizing with AI",
+        "today": "Today",
+        "blocked_by": "Waits on",
+        "types": {
+          "digital": "Digital",
+          "location": "Errand",
+          "communication": "Message",
+          "scheduled": "Scheduled"
+        },
+        "tasks": {
+          "deck": { "title": "Finish the pitch deck", "meta": "Today" },
+          "email": { "title": "Email Sarah about the offsite", "meta": "Today" },
+          "errand": { "title": "Pick up the dry cleaning", "meta": "Near the office" },
+          "review": { "title": "Review the Q3 numbers", "meta": "Tomorrow · 9:00" }
+        }
+      }
+    },
+    "trust": {
+      "items": {
+        "capture": "AI-first capture",
+        "privacy": "Isolated workspaces",
+        "offline": "Works offline",
+        "devices": "Every device"
+      }
+    },
+    "how_it_works": {
+      "eyebrow": "How it works",
+      "title": "From a messy thought to a clear plan",
+      "subtitle": "Three steps, no menus and no forms. You write, Doit does the rest.",
+      "steps": {
+        "capture": {
+          "title": "Capture it",
+          "description": "Write it exactly how it comes out—one line, ten thoughts, half a sentence. Nothing to categorize, nothing to fill in."
+        },
+        "organize": {
+          "title": "Doit organizes",
+          "description": "Each thought becomes a task with structure: the right type, the right tags, and the links between what blocks what."
+        },
+        "focus": {
+          "title": "Focus today",
+          "description": "Open a short, honest plan of what actually matters now—and leave the rest of the backlog for later."
+        }
+      }
+    },
+    "features": {
+      "eyebrow": "Features",
+      "title": "Built around the way you think",
+      "subtitle": "Capture first. Everything else happens quietly in the background.",
+      "items": {
+        "capture": {
+          "title": "Quick Capture",
+          "description": "Free text in, structured tasks out. One thought or twenty, parsed in a single pass and filed into the right workspace."
+        },
+        "focus": {
+          "title": "Daily Focus",
+          "description": "A short list of what matters today, chosen for you. Not a backlog you will never finish."
+        },
+        "dependencies": {
+          "title": "Dependency aware",
+          "description": "Doit spots what blocks what, so you always work on the one task that moves the rest forward."
+        },
+        "location": {
+          "title": "Location aware",
+          "description": "Tasks tied to a place, with nearby suggestions and a quiet nudge the moment you are close."
+        },
+        "resources": {
+          "title": "Resources in context",
+          "description": "Attach a file, a link or a note and ask questions about it without ever leaving the task."
+        },
+        "modes": {
+          "title": "Your modes",
+          "description": "Dev, student, personal or freelance—the same app, reshaped around how you actually work."
+        },
+        "workspaces": {
+          "title": "Isolated workspaces",
+          "description": "Projects stay apart, each with its own categories and views. Your context never leaks."
+        }
+      }
+    },
+    "pricing": {
+      "eyebrow": "Pricing",
+      "title": "Simple pricing. No surprises.",
+      "subtitle": "Start free. Upgrade when Doit is already part of your day.",
+      "popular": "Most popular",
+      "plans": {
+        "free": {
+          "name": "Free",
+          "price": "$0",
+          "period": "forever",
+          "description": "Everything you need to capture and finish your first tasks.",
+          "cta": "Get started",
+          "features": ["Unlimited tasks", "Quick Capture", "Daily Focus", "One workspace"]
+        },
+        "pro": {
+          "name": "Pro",
+          "price": "$12",
+          "period": "/ month",
+          "description": "For people who live in Doit all day long.",
+          "cta": "Start free trial",
+          "note": "Billed yearly. Cancel anytime.",
+          "features": [
+            "Everything in Free",
+            "Unlimited workspaces",
+            "Resources and AI answers",
+            "Dependency detection",
+            "Location reminders",
+            "Pomodoro and modes"
+          ]
+        }
+      }
+    },
+    "cta": {
+      "title": "Stop organizing. Start doing.",
+      "subtitle": "Write your first thought and watch it turn into a plan.",
+      "button": "Get started for free"
+    },
+    "footer": {
+      "tagline": "The AI-first task manager. Write the chaos, get the plan.",
+      "product": "Product",
+      "account": "Account",
+      "legal": "Legal",
+      "links": {
+        "how_it_works": "How it works",
+        "features": "Features",
+        "pricing": "Pricing",
+        "sign_in": "Sign in",
+        "get_started": "Get started",
+        "privacy": "Privacy",
+        "terms": "Terms"
+      },
+      "back_to_top": "Back to top",
+      "rights": "© {year} Doit. All rights reserved."
     },
     "metadata": {
       "title": "Welcome to DoIt",
