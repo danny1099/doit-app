@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { getPublicRoute } from "@/routes/utils";
 import { Badge, Navlink, P, Reveal, Title } from "@/shared/components";
+import { HeroVisual } from "@/modules/marketing/components";
 
 /* prettier-ignore */
 export const Hero = async () => {
@@ -23,9 +24,9 @@ export const Hero = async () => {
           </Badge>
         </Reveal>
         <Reveal delay={0.08}>
-          <Title className="mt-6 max-w-2xl text-5xl leading-[1.02] tracking-tighter text-balance md:text-7xl">
+          <Title className="mt-6 max-w-3xl text-5xl leading-[1.02] tracking-tighter text-balance md:text-7xl">
             {t.rich("title", {
-              highlight: (chunk) => <span className="text-tertiary">{chunk}</span>,
+              highlight: (chunk) => <span className="text-tertiary"><br />{ chunk}</span>,
             })}
           </Title>
           <P className="mt-6 mx-auto max-w-xl text-xs text-center leading-relaxed text-pretty md:text-sm">{t("subtitle")}</P>
@@ -38,6 +39,9 @@ export const Hero = async () => {
             href="#how-it-works" variant="outline" className="h-10 rounded-full px-6 text-xs transition-transform active:scale-[0.97]">
             {t("cta_secondary")}
           </Navlink>
+        </Reveal>
+        <Reveal delay={0.4} y={24} className="mt-16 w-full">
+          <HeroVisual />
         </Reveal>
       </div>
     </section>

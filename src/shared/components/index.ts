@@ -34,6 +34,7 @@ export * from "./navbar";
 export * from "./navlink";
 export * from "./popover";
 export * from "./progress";
+export * from "./pwa-update-prompt";
 export * from "./reveal";
 export * from "./search-box";
 export * from "./select";

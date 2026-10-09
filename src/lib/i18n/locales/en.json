@@ -264,7 +264,7 @@
     },
     "hero": {
       "badge": "New · AI-powered",
-      "title": "Write the chaos. <highlight>DoIt</highlight> Make it happen.",
+      "title": "Write the chaos. <highlight>Doit.</highlight> It turns into a plan.",
       "subtitle": "Turn scattered thoughts into clear tasks. Let AI organize, prioritize, and suggest what to tackle today—so you can get back to doing what matters.",
       "cta_primary": "Get started for free",
       "cta_secondary": "See how it works"
@@ -399,6 +399,13 @@
     "metadata": {
       "title": "Forgot Password",
       "description": "Forgot your password? No worries, we'll get you back in."
+    }
+  },
+  "pwa": {
+    "update_available": {
+      "title": "New version available",
+      "content": "A new version of Doit is ready. Update now to get the latest improvements.",
+      "action": "Update"
     }
   }
 }
