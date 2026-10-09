@@ -399,7 +399,9 @@
         "sign_in": "Sign in",
         "get_started": "Get started",
         "privacy": "Privacy",
-        "terms": "Terms"
+        "terms": "Terms",
+        "cookies": "Cookies",
+        "data_usage": "Data usage"
       },
       "back_to_top": "Back to top",
       "rights": "© {year} Doit. All rights reserved."
@@ -407,6 +409,406 @@
     "metadata": {
       "title": "Welcome to DoIt",
       "description": "DoIt is a task manager that makes organization simple, visual, and powerful. Get started today and take control of your tasks!"
+    }
+  },
+
+  "legal": {
+    "common": {
+      "eyebrow": "Legal",
+      "updated": "Last updated",
+      "toc": "On this page",
+      "back_home": "Back to home"
+    },
+    "nav": {
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy",
+      "data_usage": "Data Usage Policy",
+      "cookies": "Cookie Policy"
+    },
+    "banner": {
+      "title": "Cookies, on your terms",
+      "description": "We use cookies to keep Doit secure, remember your preferences and understand how the product is used. Read the <policy>Cookie Policy</policy>.",
+      "necessary_title": "Strictly necessary",
+      "necessary_description": "Required for authentication, security and the core features. Always on.",
+      "analytics_title": "Analytics",
+      "analytics_description": "Helps us understand how Doit is used so we can improve it.",
+      "marketing_title": "Marketing",
+      "marketing_description": "Used to measure campaigns and show relevant updates.",
+      "accept_all": "Accept all",
+      "reject_all": "Reject non-essential",
+      "customize": "Customize",
+      "save": "Save preferences",
+      "dismiss": "Dismiss"
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "subtitle": "The agreement between you and Doit for using the service.",
+      "updated": "January 2025",
+      "sections": [
+        {
+          "id": "agreement",
+          "title": "Agreement to terms",
+          "paragraphs": [
+            "These Terms of Service govern your access to and use of Doit, including the website, applications and APIs, together referred to as the Service.",
+            "By creating an account or using the Service you agree to be bound by these Terms. If you do not agree, please do not use the Service."
+          ]
+        },
+        {
+          "id": "accounts",
+          "title": "Your account",
+          "paragraphs": [
+            "To use most features you need an account. You agree to provide accurate information and to keep it up to date."
+          ],
+          "list": [
+            "You are responsible for safeguarding your login credentials.",
+            "You must be at least 16 years old, or the minimum age of digital consent in your country.",
+            "You are responsible for all activity that takes place under your account."
+          ]
+        },
+        {
+          "id": "acceptable_use",
+          "title": "Acceptable use",
+          "paragraphs": [
+            "You agree to use the Service only for lawful purposes and in a way that does not harm other people or the Service."
+          ],
+          "list": [
+            "Do not reverse engineer, resell or attempt to extract the source code of the Service.",
+            "Do not upload unlawful, infringing or malicious content.",
+            "Do not attempt to access workspaces, data or accounts that do not belong to you.",
+            "Do not interfere with, overload or disrupt the Service or its infrastructure."
+          ]
+        },
+        {
+          "id": "plans",
+          "title": "Plans and billing",
+          "paragraphs": [
+            "Doit offers a free plan and paid subscription plans. Paid plans are billed in advance on a recurring basis, either monthly or yearly.",
+            "Subscriptions renew automatically until cancelled. You can cancel at any time from your account, and access continues until the end of the current billing period.",
+            "Fees are non-refundable except where required by law. We may change prices with reasonable notice."
+          ]
+        },
+        {
+          "id": "content",
+          "title": "Your content",
+          "paragraphs": [
+            "You keep ownership of the tasks, notes, files and other content you add to Doit.",
+            "You grant us a limited licence to host, process, back up and display your content only as needed to operate and improve the Service. This licence ends when you delete your content or your account, except for backups retained for a limited period."
+          ]
+        },
+        {
+          "id": "ai",
+          "title": "AI features",
+          "paragraphs": [
+            "Doit uses artificial intelligence to structure, classify and prioritise your tasks. AI output can be inaccurate or incomplete, so you should always review it before relying on it.",
+            "We do not use your private task content to train foundation models without your consent. See the Data Usage Policy for details."
+          ]
+        },
+        {
+          "id": "intellectual_property",
+          "title": "Doit intellectual property",
+          "paragraphs": [
+            "The Service, including its software, design, trademarks and documentation, is owned by Doit and protected by intellectual property laws. These Terms do not grant you any right to use our branding without permission."
+          ]
+        },
+        {
+          "id": "third_party",
+          "title": "Third-party services",
+          "paragraphs": [
+            "Doit integrates with third-party services such as authentication, payments and AI providers. Your use of those services may be subject to their own terms, and we are not responsible for their availability or content."
+          ]
+        },
+        {
+          "id": "termination",
+          "title": "Suspension and termination",
+          "paragraphs": [
+            "You may stop using the Service and delete your account at any time. We may suspend or terminate access if you violate these Terms, if required by law, or to protect the Service and other users.",
+            "Where possible, we will give you reasonable notice and the opportunity to export your data."
+          ]
+        },
+        {
+          "id": "disclaimers",
+          "title": "Disclaimers",
+          "paragraphs": [
+            "The Service is provided on an as-is and as-available basis. To the maximum extent permitted by law, we disclaim all warranties, express or implied, including fitness for a particular purpose and non-infringement."
+          ]
+        },
+        {
+          "id": "liability",
+          "title": "Limitation of liability",
+          "paragraphs": [
+            "To the maximum extent permitted by law, Doit is not liable for indirect, incidental or consequential damages, or for lost profits or data. Our total liability for any claim is limited to the amount you paid us in the twelve months before the claim."
+          ]
+        },
+        {
+          "id": "changes",
+          "title": "Changes to these terms",
+          "paragraphs": [
+            "We may update these Terms from time to time. When we make material changes we will notify you in the product or by email. Continuing to use the Service after changes take effect means you accept the updated Terms."
+          ]
+        },
+        {
+          "id": "contact",
+          "title": "Contact",
+          "paragraphs": [
+            "If you have questions about these Terms, contact us at support@doit.app."
+          ]
+        }
+      ]
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "subtitle": "How Doit collects, uses and protects your information.",
+      "updated": "January 2025",
+      "sections": [
+        {
+          "id": "overview",
+          "title": "Overview",
+          "paragraphs": [
+            "This Privacy Policy explains what personal data we collect, why we collect it and the choices you have. It applies to everyone who uses Doit.",
+            "We aim to collect as little data as possible and to be clear about how it is used."
+          ]
+        },
+        {
+          "id": "collect",
+          "title": "Information we collect",
+          "list": [
+            "Account data such as your name and email address.",
+            "Content you create, including tasks, notes, files and preferences.",
+            "Usage data such as features used, device type and approximate location derived from your IP address.",
+            "Billing data processed by our payment provider when you subscribe to a paid plan."
+          ]
+        },
+        {
+          "id": "use",
+          "title": "How we use your information",
+          "list": [
+            "To provide, maintain and secure the Service.",
+            "To personalise your experience and power AI features.",
+            "To communicate with you about your account, updates and support.",
+            "To measure usage and improve the product.",
+            "To comply with legal obligations and enforce our Terms."
+          ]
+        },
+        {
+          "id": "legal_bases",
+          "title": "Legal bases",
+          "paragraphs": [
+            "Where the GDPR applies, we process personal data based on one or more of the following: performance of a contract, our legitimate interests, your consent and compliance with legal obligations."
+          ]
+        },
+        {
+          "id": "sharing",
+          "title": "Sharing and disclosure",
+          "paragraphs": [
+            "We do not sell your personal data. We share it only with service providers that help us run Doit, and only when legally required or as part of a corporate transaction.",
+            "Subprocessors are bound by contracts that require them to protect your data."
+          ]
+        },
+        {
+          "id": "retention",
+          "title": "Data retention",
+          "paragraphs": [
+            "We keep personal data for as long as your account is active or as needed to provide the Service. When you delete your account we delete or anonymise your data, except where we must retain it for legal, security or backup purposes."
+          ]
+        },
+        {
+          "id": "security",
+          "title": "Security",
+          "paragraphs": [
+            "We use encryption in transit, access controls and isolated workspaces to protect your data. No system is completely secure, so we cannot guarantee absolute security."
+          ]
+        },
+        {
+          "id": "transfers",
+          "title": "International transfers",
+          "paragraphs": [
+            "We may process your data in countries other than your own. When we transfer personal data across borders we rely on appropriate safeguards such as standard contractual clauses."
+          ]
+        },
+        {
+          "id": "rights",
+          "title": "Your rights",
+          "paragraphs": [
+            "Depending on where you live you may have the right to access, correct, delete, export or restrict the processing of your personal data, and to object to certain processing."
+          ],
+          "list": [
+            "You can manage most of your data directly in your account settings.",
+            "You can contact us to exercise any right that is not available in the product.",
+            "You may lodge a complaint with your local data protection authority."
+          ]
+        },
+        {
+          "id": "cookies",
+          "title": "Cookies",
+          "paragraphs": [
+            "We use cookies and similar technologies as described in our Cookie Policy. You can manage your preferences at any time from the cookie banner or your browser settings."
+          ]
+        },
+        {
+          "id": "children",
+          "title": "Children",
+          "paragraphs": [
+            "Doit is not intended for children under 16, and we do not knowingly collect their personal data. If you believe a child has provided us with data, please contact us and we will delete it."
+          ]
+        },
+        {
+          "id": "changes",
+          "title": "Changes to this policy",
+          "paragraphs": [
+            "We may update this Privacy Policy from time to time. When we make material changes we will notify you. The date at the top always reflects the latest version."
+          ]
+        },
+        {
+          "id": "contact",
+          "title": "Contact",
+          "paragraphs": [
+            "For privacy questions or requests, contact us at privacy@doit.app."
+          ]
+        }
+      ]
+    },
+    "data_usage": {
+      "title": "Data Usage Policy",
+      "subtitle": "How Doit processes, stores and protects the data you put into the product.",
+      "updated": "January 2025",
+      "sections": [
+        {
+          "id": "scope",
+          "title": "Scope",
+          "paragraphs": [
+            "This policy describes how Doit handles the data you create and connect to the Service, including tasks, notes, files and AI interactions. It complements our Privacy Policy and Terms of Service."
+          ]
+        },
+        {
+          "id": "data",
+          "title": "Data we process",
+          "list": [
+            "Your content: tasks, notes, attachments and categories.",
+            "Metadata: timestamps, workspace and device information.",
+            "AI inputs and outputs generated when you use capture, classification and question answering.",
+            "Operational logs used for security and debugging."
+          ]
+        },
+        {
+          "id": "use",
+          "title": "How we use data",
+          "paragraphs": [
+            "We process your data to run the features you ask for, to keep the Service reliable and secure, and to provide support. We also use aggregated and de-identified data to understand usage trends and improve the product."
+          ]
+        },
+        {
+          "id": "ai",
+          "title": "AI and model training",
+          "paragraphs": [
+            "AI features process your tasks and attached resources so they can be structured and prioritised. This processing may be carried out by contracted AI providers acting on our instructions.",
+            "By default we do not use your private content to train foundation models. If we ever offer an optional improvement programme, it will be opt-in and you will be able to leave at any time."
+          ]
+        },
+        {
+          "id": "storage",
+          "title": "Storage and location",
+          "paragraphs": [
+            "Data is stored in encrypted databases hosted by our infrastructure providers. Your workspaces are isolated from one another so that one customer can never access the data of another."
+          ]
+        },
+        {
+          "id": "retention",
+          "title": "Retention and deletion",
+          "paragraphs": [
+            "Your content is kept while your account is active. When you delete a task, workspace or your account, we remove the associated data from active systems and rotating backups within a limited period."
+          ]
+        },
+        {
+          "id": "subprocessors",
+          "title": "Subprocessors",
+          "paragraphs": [
+            "We rely on a small set of subprocessors for hosting, authentication, payments and AI. Each one is contractually required to protect your data and to process it only on our instructions. A current list is available on request."
+          ]
+        },
+        {
+          "id": "security",
+          "title": "Security measures",
+          "list": [
+            "Encryption of data in transit.",
+            "Access controls and least-privilege permissions.",
+            "Workspace-level isolation and tenant separation.",
+            "Monitoring and logging for suspicious activity."
+          ]
+        },
+        {
+          "id": "controls",
+          "title": "Your controls",
+          "paragraphs": [
+            "You can export or delete your data from your account, and you can contact us to request a copy or the removal of specific information. See the Privacy Policy for the full set of rights."
+          ]
+        },
+        {
+          "id": "contact",
+          "title": "Contact",
+          "paragraphs": [
+            "Questions about data usage can be sent to privacy@doit.app."
+          ]
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Cookie Policy",
+      "subtitle": "What cookies are, which ones Doit uses and how you can control them.",
+      "updated": "January 2025",
+      "sections": [
+        {
+          "id": "what",
+          "title": "What are cookies",
+          "paragraphs": [
+            "Cookies are small text files stored on your device that help websites and apps remember information about you, such as your preferences and session state."
+          ]
+        },
+        {
+          "id": "how",
+          "title": "How we use cookies",
+          "paragraphs": [
+            "We use cookies and similar technologies to keep you signed in, to remember your settings and to understand how the Service is used so we can improve it."
+          ]
+        },
+        {
+          "id": "types",
+          "title": "Types of cookies we use",
+          "list": [
+            "Strictly necessary: required for authentication, security and core functionality. These cannot be disabled.",
+            "Preferences: remember choices such as language and theme.",
+            "Analytics: help us measure usage and improve the product.",
+            "Marketing: used to measure campaigns and show relevant updates."
+          ]
+        },
+        {
+          "id": "third_party",
+          "title": "Third-party cookies",
+          "paragraphs": [
+            "Some cookies are set by trusted third parties that provide services such as analytics and payments. These providers have their own privacy and cookie policies."
+          ]
+        },
+        {
+          "id": "managing",
+          "title": "Managing your cookies",
+          "paragraphs": [
+            "When you first visit Doit you can accept all cookies, reject non-essential cookies or choose your preferences in the cookie banner. You can change your choice at any time and you can also block or delete cookies through your browser settings."
+          ]
+        },
+        {
+          "id": "changes",
+          "title": "Changes to this policy",
+          "paragraphs": [
+            "We may update this Cookie Policy as our practices change. The date at the top reflects the latest version."
+          ]
+        },
+        {
+          "id": "contact",
+          "title": "Contact",
+          "paragraphs": [
+            "For questions about our use of cookies, contact us at privacy@doit.app."
+          ]
+        }
+      ]
     }
   },
 

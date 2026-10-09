@@ -5,10 +5,12 @@ import { getPublicRoute } from "@/routes/utils";
 import { Logo, P } from "@/shared/components";
 
 const anchors = [
-  { key: "how_it_works", href: "#how-it-works" },
-  { key: "features", href: "#features" },
-  { key: "pricing", href: "#pricing" },
+  { key: "how_it_works", href: "/#how-it-works" },
+  { key: "features", href: "/#features" },
+  { key: "pricing", href: "/#pricing" },
 ] as const;
+
+const legalDocs = ["terms", "privacy", "cookies", "data_usage"] as const;
 
 const linkClass = "w-fit text-2xs text-foreground/70 hover:text-tertiary transition-colors";
 const columnTitleClass = "text-4xs text-foreground font-medium tracking-wider font-semibold uppercase";
@@ -40,8 +42,9 @@ export const Footer = async () => {
           </nav>
           <nav className="flex flex-col gap-3">
             <span className={columnTitleClass}>{t("legal")}</span>
-            <a href="#" className={linkClass}>{t("links.privacy")}</a>
-            <a href="#" className={linkClass}>{t("links.terms")}</a>
+            {legalDocs.map((doc) => (
+              <Link key={doc} href={getPublicRoute(doc) as Route} className={linkClass}>{t(`links.${doc}`)}</Link>
+            ))}
           </nav>
         </div>
         <div className="border-border/60 mt-10 flex flex-col gap-3 border-t pt-6 sm:flex-row sm:items-center sm:justify-between">

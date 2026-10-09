@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { ViewTransition } from "react";
 import { globalFont } from "@/config/fonts";
 import { ThemeProvider, I18nProvider, ModalProvider, PwaProvider } from "@/lib/providers";
-import { Toaster, TooltipProvider } from "@/shared/components";
+import { CookieBanner, Toaster, TooltipProvider } from "@/shared/components";
 import "@/globals.css";
 
 interface RootLayoutProps extends Children {
@@ -34,6 +34,7 @@ export default async function RootLayout({ children, params }: Readonly<RootLayo
                 </ModalProvider>
               </PwaProvider>
               <Toaster />
+              <CookieBanner />
             </TooltipProvider>
           </ThemeProvider>
         </I18nProvider>

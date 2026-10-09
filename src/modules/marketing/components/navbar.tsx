@@ -3,21 +3,21 @@ import { Divider, LangToggle, Logo, Navlink, ThemeToggle } from "@/shared/compon
 import { getPublicRoute } from "@/routes/utils";
 
 const anchors = [
-  { key: "how_it_works", href: "#how-it-works" },
-  { key: "features", href: "#features" },
-  { key: "pricing", href: "#pricing" },
+  { key: "how_it_works", href: "/#how-it-works" },
+  { key: "features", href: "/#features" },
+  { key: "pricing", href: "/#pricing" },
 ] as const;
 
 /* prettier-ignore */
 export const Navbar = async () => {
   const t = await getTranslations("marketing.nav");
+  const toHome = getPublicRoute("home");
   const toGetStarted = getPublicRoute("get_started");
-  const toSignIn = getPublicRoute("sign_in");
 
   return (
     <header className="bg-background sticky top-0 z-50 backdrop-blur-xl">
       <div className="mx-auto flex h-16 w-full items-center justify-between px-4 py-2 md:px-24">
-        <a href="#top" aria-label="Doit" className="shrink-0">
+        <a href={toHome} aria-label="Doit" className="shrink-0">
           <Logo showBrand />
         </a>
         <nav className="hidden items-center gap-1 md:flex rounded-2xl px-1.5 ml-44 py-1">
@@ -31,7 +31,7 @@ export const Navbar = async () => {
           <LangToggle />
           <ThemeToggle />
           <Divider type="vertical" className="hidden h-6 md:block" />
-          <Navlink href={toGetStarted} icon="arrow_right" className="rounded-full px-4 transition-transform active:scale-[0.97]">
+          <Navlink href={toGetStarted} icon="arrow_right" className="max-sm:hidden rounded-full px-4 transition-transform active:scale-[0.97]">
             {t("get_started")}
           </Navlink>
         </div>

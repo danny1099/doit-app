@@ -13,6 +13,7 @@ export * from "./checkbox-card";
 export * from "./checkbox";
 export * from "./collapsible";
 export * from "./command";
+export * from "./cookie-banner";
 export * from "./date-picker";
 export * from "./dialog";
 export * from "./divider";

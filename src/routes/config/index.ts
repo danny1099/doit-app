@@ -11,6 +11,15 @@ export const routes = {
           forgot_password: "/forgot-password",
         },
       },
+      legal: {
+        prefix: "legal",
+        routes: {
+          terms: "/terms",
+          privacy: "/privacy",
+          data_usage: "/data-usage",
+          cookies: "/cookies",
+        },
+      },
     },
   },
 
