@@ -1,10 +1,8 @@
-import type { UserRole } from "@prisma/client";
 import type { MenuItem, Segment } from "@/modules/private/types";
 
 export type MenuView = "admin" | "hub";
 
-export const menuSegments: Record<UserRole, Segment[]> = [
-  owner: [
+export const menuSegments: Segment[] = [
   {
     group: "main",
     styles: "shrink-0",
@@ -13,8 +11,7 @@ export const menuSegments: Record<UserRole, Segment[]> = [
     group: "platform",
     styles: "mt-10",
     title: "Platform",
-  }],
-  
+  },
 ] as const;
 
 export const menuItems: MenuItem[] = [
@@ -24,5 +21,12 @@ export const menuItems: MenuItem[] = [
     render: "link",
     place: "main",
     icon: "home",
+  },
+  {
+    name: "workspaces",
+    path: "workspaces",
+    render: "link",
+    place: "main",
+    icon: "workspace",
   },
 ] as const;

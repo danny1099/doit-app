@@ -31,6 +31,8 @@ export const routes = {
         prefix: "main",
         routes: {
           overview: "/overview",
+          workspaces: "/workspaces",
+          workspace: "/workspaces/[slug]",
         },
       },
     },

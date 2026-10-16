@@ -1,3 +1,5 @@
+import { I18nMessage } from "next-intl";
+
 declare global {
   interface Children {
     children: React.ReactNode;
@@ -6,7 +8,7 @@ declare global {
   interface APIResult<T> {
     data: T | null;
     code: number;
-    message: string | null;
+    message: I18nMessage | null;
     status: "success" | "error";
     error?: Error | null;
     errorMessage?: string | null;

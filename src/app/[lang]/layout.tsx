@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { ViewTransition } from "react";
 import { globalFont } from "@/config/fonts";
-import { ThemeProvider, I18nProvider, ModalProvider, PwaProvider } from "@/lib/providers";
+import { ThemeProvider, I18nProvider, ModalProvider, PwaProvider, TrpcProvider } from "@/lib/providers";
 import { CookieBanner, Toaster, TooltipProvider } from "@/shared/components";
 import "@/globals.css";
 
@@ -29,9 +29,11 @@ export default async function RootLayout({ children, params }: Readonly<RootLayo
           <ThemeProvider>
             <TooltipProvider>
               <PwaProvider>
-                <ModalProvider>
-                  <ViewTransition>{children}</ViewTransition>
-                </ModalProvider>
+                <TrpcProvider>
+                  <ModalProvider>
+                    <ViewTransition>{children}</ViewTransition>
+                  </ModalProvider>
+                </TrpcProvider>
               </PwaProvider>
               <Toaster />
               <CookieBanner />

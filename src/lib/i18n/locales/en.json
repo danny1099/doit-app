@@ -224,6 +224,30 @@
     "unauthorized": {
       "title": "Action not allowed",
       "content": "It appears that you are not authorized to perform this action. Please try again."
+    },
+    "workspace_not_found": {
+      "title": "Workspace not found",
+      "content": "We couldn't find your workspace"
+    },
+    "workspace_already_exists": {
+      "title": "Workspace already exists",
+      "content": "Looks like you're already part of our community"
+    },
+    "workspace_created": {
+      "title": "Workspace created",
+      "content": "Your workspace has been created successfully."
+    },
+    "workspace_updated": {
+      "title": "Workspace updated",
+      "content": "Your workspace has been updated successfully."
+    },
+    "workspace_deleted": {
+      "title": "Workspace deleted",
+      "content": "Your workspace has been deleted successfully."
+    },
+    "workspace_set_default": {
+      "title": "Workspace set as default",
+      "content": "Your workspace has been set as default default."
     }
   },
 
@@ -248,7 +272,8 @@
     "platform": "Platform",
     "logOut": "Log out",
     "items": {
-      "overview": "Overview"
+      "overview": "Overview",
+      "workspaces": "Workspaces"
     }
   },
 
@@ -549,9 +574,7 @@
         {
           "id": "contact",
           "title": "Contact",
-          "paragraphs": [
-            "If you have questions about these Terms, contact us at support@doit.app."
-          ]
+          "paragraphs": ["If you have questions about these Terms, contact us at support@doit.app."]
         }
       ]
     },
@@ -661,9 +684,7 @@
         {
           "id": "contact",
           "title": "Contact",
-          "paragraphs": [
-            "For privacy questions or requests, contact us at privacy@doit.app."
-          ]
+          "paragraphs": ["For privacy questions or requests, contact us at privacy@doit.app."]
         }
       ]
     },
@@ -745,9 +766,7 @@
         {
           "id": "contact",
           "title": "Contact",
-          "paragraphs": [
-            "Questions about data usage can be sent to privacy@doit.app."
-          ]
+          "paragraphs": ["Questions about data usage can be sent to privacy@doit.app."]
         }
       ]
     },
@@ -804,9 +823,7 @@
         {
           "id": "contact",
           "title": "Contact",
-          "paragraphs": [
-            "For questions about our use of cookies, contact us at privacy@doit.app."
-          ]
+          "paragraphs": ["For questions about our use of cookies, contact us at privacy@doit.app."]
         }
       ]
     }
@@ -943,6 +960,70 @@
       "title": "New version available",
       "content": "A new version of Doit is ready. Update now to get the latest improvements.",
       "action": "Update"
+    }
+  },
+
+  "workspaces": {
+    "title": "Workspaces",
+    "description": "Everything you need to manage your workspace and your tasks.",
+    "search_box": "Type something to search in your workspaces...",
+    "no_description": "This workspace has no description yet. let's add one!",
+    "add-button": "Add workspace",
+    "current": "Current",
+    "no_results": {
+      "title": "No workspaces found",
+      "subtitle": "It looks like you don't have any workspaces yet. Let's create one!"
+    },
+    "table": {
+      "name": "Name",
+      "createdAt": "Created At",
+      "slug": "ID workspace",
+      "actions": "Actions"
+    },
+    "options": {
+      "edit": "Edit",
+      "delete": "Delete",
+      "get_into": "Get into",
+      "set_as_default": "Set as default",
+      "cancel": "Cancel"
+    },
+    "form": {
+      "name": { "label": "Workspace name", "placeholder": "Ej. Acme, Dale" },
+      "description": {
+        "label": "Description",
+        "placeholder": "Describe your what your workspace does and what makes it unique"
+      },
+      "submit-button": "Save Workspace",
+      "cancel-button": "Cancel"
+    },
+    "aditional-info": {
+      "title": "More info",
+      "description": "Describe your workspace in more detail"
+    },
+    "modal": {
+      "title": "Workspace",
+      "subtitle": "Everything you need to manage your workspace and your tasks.",
+      "delete": {
+        "title": "Wait a moment",
+        "subtitle": "Are you sure you want to delete this workspace?",
+        "description": "This action cannot be undone.",
+        "cancel-button": "No, I changed my mind",
+        "confirm-button": "Yes, I'm sure"
+      }
+    },
+    "metadata": {
+      "title": "Your Workspaces",
+      "description": "All your workspaces will be listed here. You can create new ones or update existing ones."
+    },
+    "avatar_picker": {
+      "title": "Choose an avatar that reflects you style.",
+      "upload_from_device": "Or click the camera icon to upload a photo."
+    },
+    "icons_picker": {
+      "title": "Logo symbol",
+      "upload_from_device": "Or click the camera icon to upload an image",
+      "icon_color": "Color of symbol",
+      "apply": "I want this symbol"
     }
   }
 }

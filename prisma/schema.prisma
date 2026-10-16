@@ -183,7 +183,8 @@ model Invitation {
 model Workspace {
   id             String   @id @default(cuid())
   name           String
-  slug           String
+  slug           String   @unique
+  description    String?
   logo           String?
   status         Status   @default(ACTIVE)
   organizationId String
