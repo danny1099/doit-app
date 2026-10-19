@@ -1,9 +1,11 @@
 import { procedure, router } from "@/trpc/init";
-import { workspaceRouter } from "@/modules/workspace/router";
+import { onboardingRouter } from "@/modules/onboarding/router";
+import { organizationRouter } from "@/modules/organization/router";
 
 export const appRouter = router({
   health: procedure.query(() => "The server is up and running and healthy!"),
-  workspace: workspaceRouter,
+  onboarding: onboardingRouter,
+  organization: organizationRouter,
 });
 
 export type AppRouter = typeof appRouter;

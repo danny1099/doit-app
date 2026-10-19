@@ -225,6 +225,50 @@
       "title": "Action not allowed",
       "content": "It appears that you are not authorized to perform this action. Please try again."
     },
+    "organization_already_exists": {
+      "title": "Organization already exists",
+      "content": "You already have an organization with this name. Try a different one."
+    },
+    "organization_error": {
+      "title": "Something went wrong",
+      "content": "We couldn't create your organization. Please try again."
+    },
+    "organization_not_found": {
+      "title": "Organization not found",
+      "content": "We couldn't find this organization. It may have been deleted."
+    },
+    "organization_created": {
+      "title": "Organization created",
+      "content": "Your organization is ready. Now let's set up your tasks."
+    },
+    "organization_updated": {
+      "title": "Organization updated",
+      "content": "Your changes have been saved."
+    },
+    "organization_has_members": {
+      "title": "Organization has members",
+      "content": "This organization still has members. Remove them before deleting it."
+    },
+    "organization_deleted": {
+      "title": "Organization deleted",
+      "content": "Your organization has been deleted."
+    },
+    "organization_member_without_role": {
+      "title": "Role not found",
+      "content": "This member doesn't have a role assigned. Please try again."
+    },
+    "organization_set_default": {
+      "title": "Default organization set",
+      "content": "This organization will open by default."
+    },
+    "onboarding_not_completed": {
+      "title": "Almost there!",
+      "content": "You're not done yet. Finish the last steps to keep going."
+    },
+    "onboarding_completed": {
+      "title": "You're all set!",
+      "content": "Nice! Your account is ready — let's do this."
+    },
     "workspace_not_found": {
       "title": "Workspace not found",
       "content": "We couldn't find your workspace"
@@ -244,10 +288,6 @@
     "workspace_deleted": {
       "title": "Workspace deleted",
       "content": "Your workspace has been deleted successfully."
-    },
-    "workspace_set_default": {
-      "title": "Workspace set as default",
-      "content": "Your workspace has been set as default default."
     }
   },
 
@@ -273,7 +313,7 @@
     "logOut": "Log out",
     "items": {
       "overview": "Overview",
-      "workspaces": "Workspaces"
+      "organizations": "Organizations"
     }
   },
 
@@ -868,6 +908,7 @@
       "description": "Get started with Doit, the task manager that organizes your to-dos for you."
     }
   },
+
   "sign_in": {
     "title": "Focus it. Finish it.",
     "description": "Sign in to see today's focus and pick up right where you left off.",
@@ -896,6 +937,7 @@
       "description": "Sign in to your Doit account and get back to your tasks."
     }
   },
+
   "forgot_password": {
     "title": "Reset it. Get back to it.",
     "description": "Set a new password and you'll be back to your tasks in a minute.",
@@ -955,6 +997,7 @@
       "description": "Forgot your password? No worries, we'll get you back in."
     }
   },
+
   "pwa": {
     "update_available": {
       "title": "New version available",
@@ -963,60 +1006,56 @@
     }
   },
 
-  "workspaces": {
-    "title": "Workspaces",
-    "description": "Everything you need to manage your workspace and your tasks.",
-    "search_box": "Type something to search in your workspaces...",
-    "no_description": "This workspace has no description yet. let's add one!",
-    "add-button": "Add workspace",
+  "organization": {
+    "title": "Organizations",
+    "description": "Keep your projects organized in separate spaces, each with its own tasks and views.",
+    "search_box": "Search your organizations...",
+    "no_description": "No description yet. Let's add one!",
+    "add-button": "Add organization",
     "current": "Current",
     "no_results": {
-      "title": "No workspaces found",
-      "subtitle": "It looks like you don't have any workspaces yet. Let's create one!"
+      "title": "No organizations found",
+      "subtitle": "You don't have any organizations yet. Let's create one!"
     },
     "table": {
       "name": "Name",
       "createdAt": "Created At",
-      "slug": "ID workspace",
+      "slug": "Organization ID",
       "actions": "Actions"
     },
     "options": {
       "edit": "Edit",
       "delete": "Delete",
-      "get_into": "Get into",
+      "get_into": "Open",
       "set_as_default": "Set as default",
       "cancel": "Cancel"
     },
     "form": {
-      "name": { "label": "Workspace name", "placeholder": "Ej. Acme, Dale" },
+      "name": { "label": "Organization name", "placeholder": "e.g. Acme, Dale Inc" },
       "description": {
         "label": "Description",
-        "placeholder": "Describe your what your workspace does and what makes it unique"
+        "placeholder": "What does your organization do?"
       },
-      "submit-button": "Save Workspace",
+      "submit-button": "Save organization",
       "cancel-button": "Cancel"
     },
-    "aditional-info": {
-      "title": "More info",
-      "description": "Describe your workspace in more detail"
-    },
     "modal": {
-      "title": "Workspace",
-      "subtitle": "Everything you need to manage your workspace and your tasks.",
+      "title": "Your organization",
+      "subtitle": "Keep your projects organized in one place.",
       "delete": {
-        "title": "Wait a moment",
-        "subtitle": "Are you sure you want to delete this workspace?",
-        "description": "This action cannot be undone.",
-        "cancel-button": "No, I changed my mind",
-        "confirm-button": "Yes, I'm sure"
+        "title": "Delete organization?",
+        "subtitle": "This will remove the organization and its data.",
+        "description": "This action can't be undone.",
+        "cancel-button": "No, keep it",
+        "confirm-button": "Yes, delete it"
       }
     },
     "metadata": {
-      "title": "Your Workspaces",
-      "description": "All your workspaces will be listed here. You can create new ones or update existing ones."
+      "title": "Your organizations",
+      "description": "Create and manage your organizations from here."
     },
     "avatar_picker": {
-      "title": "Choose an avatar that reflects you style.",
+      "title": "Choose an avatar that reflects your style.",
       "upload_from_device": "Or click the camera icon to upload a photo."
     },
     "icons_picker": {
@@ -1024,6 +1063,65 @@
       "upload_from_device": "Or click the camera icon to upload an image",
       "icon_color": "Color of symbol",
       "apply": "I want this symbol"
+    }
+  },
+
+  "onboarding": {
+    "title": "Let's get you set up",
+    "description": "A few quick steps and Doit will be ready to roll.",
+    "avatar_picker": {
+      "title": "Pick an avatar that feels like you.",
+      "upload_from_device": "Or click the camera icon to upload a photo."
+    },
+    "icons_picker": {
+      "title": "Pick a symbol",
+      "upload_from_device": "Or click the camera icon to upload an image",
+      "icon_color": "Give it some color"
+    },
+    "steps": {
+      "current": "Step {step} of 6",
+      "account": {
+        "title": "About you",
+        "subtitle": "A few details to make DoIt feel yours, like a home.",
+        "disclaimer": "Doit will never share your email address with third parties."
+      },
+      "brand": {
+        "title": "Your workspace",
+        "subtitle": "Choose a name and logo — make it yours."
+      },
+      "connect": {
+        "title": "Choose your plan",
+        "subtitle": "Choose the plan that best suits your needs. Don't worry—you can change it later.",
+        "picker": {
+          "stripe": {
+            "label": "Stripe",
+            "desc": "Available in over 45 countries worldwide",
+            "connect": "Connect to Stripe"
+          }
+        }
+      },
+      "finish": {
+        "title": "Almost there!",
+        "subtitle": "Give everything one last look and you're good to go.",
+        "resume": {
+          "name": "Full name",
+          "workspace": "Workspace",
+          "processor": "Payment processor",
+          "disclaimer": "Doit will only request read permissions from the payment processor. We never access your funds."
+        }
+      }
+    },
+    "form": {
+      "name": { "label": "Full name", "placeholder": "e.g. Martina García" },
+      "email": { "label": "Email", "placeholder": "The email you used to sign up" },
+      "workspace": { "label": "Workspace name", "placeholder": "e.g. Acme, Home, Freelance" },
+      "continue": "Let's keep going",
+      "submit-button": "Set up my account",
+      "previous": "Go back"
+    },
+    "metadata": {
+      "title": "Welcome to Doit",
+      "description": "Let's get you set up — it'll only take a minute."
     }
   }
 }

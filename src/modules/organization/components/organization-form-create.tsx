@@ -4,34 +4,31 @@ import { I18nMessage, useTranslations } from "next-intl";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { fallbackAvatar } from "@/shared/utils";
 import { useModal, useToast } from "@/shared/hooks";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/shared/components/form";
 import { Avatar, Button, ImageFromDevice, Input } from "@/shared/components";
-import { workspaceSchema, type WorkspaceSchema } from "@/modules/workspace/schema";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/shared/components/form";
+import { organizationSchema, type OrganizationSchema } from "@/modules/organization/schema";
 import { trpc, useUtils } from "@/trpc/client";
 
-export const WorkspaceFormCreate = () => {
+export const OrganizationFormCreate = () => {
   const toast = useToast();
-  const t = useTranslations("workspaces");
+  const t = useTranslations("organization");
   const { closeModal } = useModal();
 
   /* use trpc api services and utils to request and refresh data */
   const utils = useUtils();
-  const { mutateAsync } = trpc.workspace.create.useMutation({
-    onSuccess: () => utils.workspace.getAllWorkspaces.invalidate(),
+  const { mutateAsync } = trpc.organization.create.useMutation({
+    onSuccess: () => utils.organization.getAll.invalidate(),
   });
 
-  const form = useForm<WorkspaceSchema>({
-    resolver: zodResolver(workspaceSchema),
+  const form = useForm<OrganizationSchema>({
+    resolver: zodResolver(organizationSchema),
     defaultValues: {
       name: "",
-      description: "",
       logo: "",
     },
   });
 
-  const { formState } = form;
-
-  const onSubmit = async (values: WorkspaceSchema) => {
+  const onSubmit = async (values: OrganizationSchema) => {
     const { error, message } = await mutateAsync(values);
 
     if (error && message) {
@@ -78,13 +75,13 @@ export const WorkspaceFormCreate = () => {
                       className="text-foreground w-full"
                     />
                   </FormControl>
-                  {formState.errors["name"] && <FormMessage />}
+                  {form.formState.errors["name"] && <FormMessage />}
                 </FormItem>
               )}
             />
           </div>
           <div className="mt-10 flex w-full flex-col gap-2 md:flex-row-reverse">
-            <Button type="submit" icon="save" isLoading={formState.isSubmitting} className="w-full md:w-auto">
+            <Button type="submit" icon="save" isLoading={form.formState.isSubmitting} className="w-full md:w-auto">
               {t("form.submit-button")}
             </Button>
             <Button type="button" variant="outline" onClick={closeModal} className="w-full md:w-32">

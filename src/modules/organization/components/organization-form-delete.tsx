@@ -1,23 +1,23 @@
 "use client";
-import type { Workspace } from "@prisma/client";
+import type { Organization } from "@prisma/client";
 import { I18nMessage, useTranslations } from "next-intl";
 import { useModal, useToast } from "@/shared/hooks";
 import { Button, Icon, Title, P } from "@/shared/components";
 import { trpc, useUtils } from "@/trpc/client";
 
-export const WorkspaceFormDelete = (workspace: Workspace) => {
+export const OrganizationFormDelete = (organization: Organization) => {
   const toast = useToast();
-  const t = useTranslations("workspaces.modal");
+  const t = useTranslations("organization.modal");
   const { closeModal } = useModal();
 
   /* use trpc api services and utils to request and refresh data */
   const utils = useUtils();
-  const { mutateAsync, isPending } = trpc.workspace.delete.useMutation({
-    onSuccess: () => utils.workspace.getAllWorkspaces.invalidate(),
+  const { mutateAsync, isPending } = trpc.organization.delete.useMutation({
+    onSuccess: () => utils.organization.getAll.invalidate(),
   });
 
   const onSubmit = async () => {
-    const { status, message } = await mutateAsync({ param: workspace.id });
+    const { status, message } = await mutateAsync({ param: organization.id });
 
     if (status === "error" && message) {
       toast({ message, type: "error" });
@@ -47,7 +47,7 @@ export const WorkspaceFormDelete = (workspace: Workspace) => {
             icon="delete"
             isLoading={isPending}
             onClick={onSubmit}
-            className="bg-destructive/10 w-full md:w-fit"
+            className="bg-destructive/10 text-destructive w-full md:w-fit"
           >
             {t("delete.confirm-button")}
           </Button>

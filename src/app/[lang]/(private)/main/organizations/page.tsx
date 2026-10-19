@@ -3,11 +3,11 @@ import { Suspense } from "react";
 import { getTranslations } from "next-intl/server";
 import { P, Title, Loader } from "@/shared/components";
 import { trpc, HydrateClient } from "@/trpc/server";
-import { WorkspaceListed } from "@/modules/workspace/components";
+import { OrganizationListed } from "@/modules/organization/components";
 
-export default async function Workspaces() {
-  const t = await getTranslations("workspaces");
-  await trpc.workspace.getAllWorkspaces.prefetch();
+export default async function Organizations() {
+  const t = await getTranslations("organization");
+  await trpc.organization.getAll.prefetch();
 
   return (
     <section className="flex size-full flex-col gap-4 px-4 py-5 md:px-14">
@@ -17,7 +17,7 @@ export default async function Workspaces() {
       </div>
       <HydrateClient>
         <Suspense fallback={<Loader />}>
-          <WorkspaceListed />
+          <OrganizationListed />
         </Suspense>
       </HydrateClient>
     </section>
@@ -25,7 +25,7 @@ export default async function Workspaces() {
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("workspaces.metadata");
+  const t = await getTranslations("organization.metadata");
   return {
     title: t("title"),
     description: t("description"),

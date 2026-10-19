@@ -13,19 +13,20 @@ enum Status {
 }
 
 model User {
-  id                String   @id @default(cuid())
-  name              String?
-  image             String?
-  email             String
-  emailVerified     Boolean  @default(false)
-  withOnboarding    Boolean  @default(false)
-  status            Status   @default(ACTIVE)
-  role              String?
-  stripeCustomerId  String?  @unique
-  activeWorkspaceId String?
-  language          String?  @default("en")
-  createdAt         DateTime @default(now())
-  updatedAt         DateTime @updatedAt
+  id                   String   @id @default(cuid())
+  name                 String?
+  image                String?
+  email                String
+  emailVerified        Boolean  @default(false)
+  withOnboarding       Boolean  @default(false)
+  status               Status   @default(ACTIVE)
+  role                 String?
+  stripeCustomerId     String?  @unique
+  activeOrganizationId String?
+  activeWorkspaceId    String?
+  language             String?  @default("en")
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
 
   sessions      Session[]
   accounts      Account[]
@@ -33,6 +34,7 @@ model User {
   members       Member[]
   invitations   Invitation[]
   workspaces    Workspace[]
+  organizations Organization[]
 
   @@unique([email])
   @@map("user")
@@ -135,8 +137,11 @@ model Organization {
   metadata  String?
   domain    String?
   status    Status   @default(ACTIVE)
+  userId    String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   members     Member[]
   invitations Invitation[]
@@ -159,7 +164,7 @@ model Member {
   user         User         @relation(fields: [userId], references: [id])
   organization Organization @relation(fields: [organizationId], references: [id])
 
-  @@index([userId, organizationId])
+  @@unique([userId, organizationId])
   @@map("member")
 }
 

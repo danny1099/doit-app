@@ -139,6 +139,16 @@ export const generateRandomString = (length: number = 6): string => {
     .join("");
 };
 
+export const generateRandomNumber = (digits: number = 6): string => {
+  const safeDigits = Math.max(1, Math.floor(digits));
+  const timeSeed = Date.now();
+  const timeValue = timeSeed % Math.pow(10, safeDigits);
+  const randomValue = Math.floor(Math.random() * Math.pow(10, safeDigits));
+  const result = (timeValue + randomValue) % Math.pow(10, safeDigits);
+
+  return String(result).padStart(safeDigits, "0");
+};
+
 export const tryCatch = async <T>(promise: Promise<T>): Promise<Partial<APIResult<T>>> => {
   try {
     const data = await promise;

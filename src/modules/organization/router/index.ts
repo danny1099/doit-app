@@ -1,22 +1,22 @@
-import type { Workspace } from "@prisma/client";
+import type { Organization } from "@prisma/client";
 import { authedProcedure, param, router } from "@/trpc/init";
 import { uploadImage } from "@/shared/upload/cloudinary";
 import { base64ToFile, isBase64Image, slugSanitize, tryCatch } from "@/shared/utils";
-import { workspaceSchema, workspaceSchemaUpdate } from "@/modules/workspace/schema";
-import type { WorkspacesList } from "@/modules/workspace/types";
+import { organizationSchema, organizationSchemaUpdate } from "@/modules/organization/schema";
+import type { OrganizationList } from "@/modules/organization/types";
 
-export const workspaceRouter = router({
-  create: authedProcedure.input(workspaceSchema).mutation<APIResult<Workspace>>(async ({ ctx, input }) => {
-    const { name, description, logo } = input;
+export const organizationRouter = router({
+  create: authedProcedure.input(organizationSchema).mutation<APIResult<Organization>>(async ({ ctx, input }) => {
+    const { name, logo } = input;
 
     /* convert workspace name to slug and validate it does not exist */
     const slug = slugSanitize(name);
-    const existWorkspace = await ctx.db.workspace.findUnique({ where: { slug } });
-    if (existWorkspace) {
+    const existOrganization = await ctx.db.organization.findUnique({ where: { slug } });
+    if (existOrganization) {
       return {
         data: null,
         status: "error",
-        message: "workspace_already_exists",
+        message: "organization_already_exists",
         code: 409,
       };
     }
@@ -27,14 +27,12 @@ export const workspaceRouter = router({
     const imageUrl = imageToFile ? await uploadImage(imageToFile) : logo;
 
     const { data, error } = await tryCatch(
-      ctx.db.workspace.create({
+      ctx.db.organization.create({
         data: {
           name,
           slug,
-          description,
           logo: imageUrl,
           userId: ctx.userId,
-          organizationId: ctx.organizationId as string,
         },
       })
     );
@@ -53,34 +51,34 @@ export const workspaceRouter = router({
     return {
       data,
       status: "success",
-      message: "workspace_created",
+      message: "organization_created",
       code: 200,
     };
   }),
 
-  update: authedProcedure.input(workspaceSchemaUpdate).mutation<APIResult<Workspace>>(async ({ ctx, input }) => {
+  update: authedProcedure.input(organizationSchemaUpdate).mutation<APIResult<Organization>>(async ({ ctx, input }) => {
     const { id, ...rest } = input;
 
     /* validate workspace exists searching by id */
-    const existWorkspace = await ctx.db.workspace.findUnique({ where: { id } });
-    if (!existWorkspace) {
+    const existOrganization = await ctx.db.organization.findUnique({ where: { id } });
+    if (!existOrganization) {
       return {
         data: null,
         status: "error",
-        message: "workspace_not_found",
+        message: "organization_not_found",
         code: 409,
       };
     }
 
     if (rest.name !== undefined) {
       const slug = slugSanitize(rest.name as string);
-      if (slug !== existWorkspace.slug) {
-        const slugExisting = await ctx.db.workspace.findFirst({ where: { slug, id: { not: id } } });
+      if (slug !== existOrganization.slug) {
+        const slugExisting = await ctx.db.organization.findFirst({ where: { slug, id: { not: id } } });
         if (slugExisting) {
           return {
             data: null,
             status: "error",
-            message: "workspace_already_exists",
+            message: "organization_already_exists",
             code: 409,
           };
         }
@@ -95,12 +93,12 @@ export const workspaceRouter = router({
     const updateData = {
       ...(rest.name !== undefined && { name: rest.name }),
       ...(rest.slug !== undefined && { slug: rest.slug }),
-      ...(rest.description !== undefined && { description: rest.description }),
       ...(rest.logo !== undefined && { logo: imageUrl }),
+      ...(rest.domain !== undefined && { domain: rest.domain }),
     };
 
     const { data, error } = await tryCatch(
-      ctx.db.workspace.update({
+      ctx.db.organization.update({
         data: updateData,
         where: { id },
       })
@@ -120,28 +118,27 @@ export const workspaceRouter = router({
     return {
       data,
       status: "success",
-      message: "workspace_updated",
+      message: "organization_updated",
       code: 200,
     };
   }),
 
-  delete: authedProcedure.input(param).mutation<APIResult<Workspace>>(async ({ ctx, input }) => {
+  delete: authedProcedure.input(param).mutation<APIResult<Organization>>(async ({ ctx, input }) => {
     const { param: id } = input;
 
     /* validate workspace exists searching by id */
-    const existWorkspace = await ctx.db.workspace.findUnique({ where: { id } });
-    if (!existWorkspace) {
+    const existOrganization = await ctx.db.organization.findUnique({ where: { id } });
+    if (!existOrganization) {
       return {
         data: null,
         status: "error",
-        message: "workspace_not_found",
+        message: "organization_not_found",
         code: 409,
       };
     }
 
     /* delete brand with id */
-    const { data, error } = await tryCatch(ctx.db.workspace.delete({ where: { id } }));
-
+    const { data, error } = await tryCatch(ctx.db.organization.delete({ where: { id } }));
     if (error || !data) {
       return {
         data: null,
@@ -156,21 +153,21 @@ export const workspaceRouter = router({
     return {
       data,
       status: "success",
-      message: "workspace_deleted",
+      message: "organization_deleted",
       code: 200,
     };
   }),
 
-  setWorkspaceAsDefault: authedProcedure.input(param).mutation<APIResult<Workspace>>(async ({ ctx, input }) => {
+  makeAsDefault: authedProcedure.input(param).mutation<APIResult<Organization>>(async ({ ctx, input }) => {
     const { param: id } = input;
 
     /* validate workspace exists searching by id */
-    const existWorkspace = await ctx.db.workspace.findUnique({ where: { id } });
-    if (!existWorkspace) {
+    const existOrganization = await ctx.db.organization.findUnique({ where: { id } });
+    if (!existOrganization) {
       return {
         data: null,
         status: "error",
-        message: "workspace_not_found",
+        message: "organization_not_found",
         code: 409,
       };
     }
@@ -178,7 +175,7 @@ export const workspaceRouter = router({
     /* set workspace as default */
     const { data, error } = await tryCatch(
       ctx.db.user.update({
-        data: { activeWorkspaceId: id },
+        data: { activeOrganizationId: id },
         where: { id: ctx.userId },
       })
     );
@@ -195,16 +192,16 @@ export const workspaceRouter = router({
     }
 
     return {
-      data: existWorkspace,
+      data: existOrganization,
       status: "success",
-      message: "workspace_set_default",
+      message: "organization_set_default",
       code: 200,
     };
   }),
 
-  getAllWorkspaces: authedProcedure.query<APIResult<WorkspacesList[]>>(async ({ ctx }) => {
+  getAll: authedProcedure.query<APIResult<OrganizationList[]>>(async ({ ctx }) => {
     const { data, error } = await tryCatch(
-      ctx.db.workspace.findMany({
+      ctx.db.organization.findMany({
         where: { userId: ctx.userId },
       })
     );
@@ -221,7 +218,7 @@ export const workspaceRouter = router({
 
     const result = data.map((item) => ({
       ...item,
-      is_active: item.id === ctx.workspaceId,
+      is_active: item.id === ctx.organizationId,
     }));
 
     return {
@@ -232,11 +229,11 @@ export const workspaceRouter = router({
     };
   }),
 
-  getWorkspaceById: authedProcedure.input(param).query<APIResult<Workspace>>(async ({ ctx, input }) => {
+  getById: authedProcedure.input(param).query<APIResult<Organization>>(async ({ ctx, input }) => {
     const { param: id } = input;
 
     const { data, error } = await tryCatch(
-      ctx.db.workspace.findUnique({
+      ctx.db.organization.findUnique({
         where: { id },
       })
     );
@@ -259,11 +256,11 @@ export const workspaceRouter = router({
     };
   }),
 
-  getWorkspaceBySlug: authedProcedure.input(param).query<APIResult<Workspace>>(async ({ ctx, input }) => {
+  getBySlug: authedProcedure.input(param).query<APIResult<Organization>>(async ({ ctx, input }) => {
     const { param: slug } = input;
 
     const { data, error } = await tryCatch(
-      ctx.db.workspace.findUnique({
+      ctx.db.organization.findUnique({
         where: { slug },
       })
     );

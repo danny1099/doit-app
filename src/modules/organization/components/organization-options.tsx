@@ -1,38 +1,33 @@
 "use client";
-import type { Workspace } from "@prisma/client";
+import type { Organization } from "@prisma/client";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import { getPrivateRoute } from "@/routes/utils";
 import { cn } from "@/shared/utils";
 import { useModal, useToast } from "@/shared/hooks";
 import { Button, Divider, IconName, Popover, PopoverContent, PopoverTrigger } from "@/shared/components";
-import { WorkspaceFormDelete } from "@/modules/workspace/components";
+import { OrganizationFormDelete } from "@/modules/organization/components";
 import { trpc } from "@/trpc/client";
 
-export function ButtonActions(workspace: Workspace) {
+export function ButtonActions(organization: Organization) {
   const { openModal } = useModal();
-  const t = useTranslations("workspaces");
+  const t = useTranslations("organization");
   const router = useRouter();
   const toast = useToast();
 
   /* use trpc api services and utils to request and refresh data */
-  const { mutateAsync } = trpc.workspace.setWorkspaceAsDefault.useMutation();
+  const { mutateAsync } = trpc.organization.makeAsDefault.useMutation();
 
-  const getIntoWorkspace = () => {
-    const goToWorkspace = getPrivateRoute("workspace", { slug: workspace.slug });
-    router.push(goToWorkspace, { scroll: false });
-  };
-
-  const setWorkspaceAsDefault = async () => {
-    const { data, error, message } = await mutateAsync({ param: workspace.id });
+  const setOrganizationAsDefault = async () => {
+    const { data, error, message } = await mutateAsync({ param: organization.id });
 
     if (error && message) {
       toast({ message, type: "error" });
       return;
     }
 
-    const goToWorkspace = getPrivateRoute("workspace", { slug: data?.slug as string });
-    router.push(goToWorkspace, { scroll: false });
+    const redirectTo = getPrivateRoute("organization", { slug: data?.slug as string });
+    router.push(redirectTo, { scroll: false });
   };
 
   const items = [
@@ -40,13 +35,17 @@ export function ButtonActions(workspace: Workspace) {
       name: "edit",
       label: t("options.edit"),
       icon: "edit",
-      onClick: () => getIntoWorkspace(),
+      onClick: () => {
+        openModal({
+          content: <OrganizationFormDelete {...organization} />,
+        });
+      },
     },
     {
       name: "set_as_default",
       label: t("options.set_as_default"),
       icon: "set_active",
-      onClick: setWorkspaceAsDefault,
+      onClick: setOrganizationAsDefault,
     },
     {
       name: "delete",
@@ -54,7 +53,7 @@ export function ButtonActions(workspace: Workspace) {
       icon: "delete",
       onClick: () => {
         openModal({
-          content: <WorkspaceFormDelete {...workspace} />,
+          content: <OrganizationFormDelete {...organization} />,
         });
       },
     },

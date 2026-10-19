@@ -23,10 +23,10 @@ export const menuItems: MenuItem[] = [
     icon: "home",
   },
   {
-    name: "workspaces",
-    path: "workspaces",
+    name: "organizations",
+    path: "organizations",
     render: "link",
     place: "main",
-    icon: "workspace",
+    icon: "building",
   },
 ] as const;

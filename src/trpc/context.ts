@@ -9,7 +9,7 @@ export const createTRPCContext = async (opts: { headers: Headers }) => {
     db: prisma,
     userId: auth?.user.id,
     workspaceId: auth?.user.activeWorkspaceId as string | undefined,
-    organizationId: "" as string | undefined, // TODO: implement organizationId in auth session
+    organizationId: auth?.user.activeOrganizationId as string | undefined,
   };
 };
 
