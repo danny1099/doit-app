@@ -6,7 +6,7 @@ import { getPrivateRoute } from "@/routes/utils";
 import { cn } from "@/shared/utils";
 import { useModal, useToast } from "@/shared/hooks";
 import { Button, Divider, IconName, Popover, PopoverContent, PopoverTrigger } from "@/shared/components";
-import { OrganizationFormDelete } from "@/modules/organization/components";
+import { OrganizationFormDelete, OrganizationFormEdit } from "@/modules/organization/components";
 import { trpc } from "@/trpc/client";
 
 export function ButtonActions(organization: Organization) {
@@ -26,7 +26,7 @@ export function ButtonActions(organization: Organization) {
       return;
     }
 
-    const redirectTo = getPrivateRoute("organization", { slug: data?.slug as string });
+    const redirectTo = getPrivateRoute("organizations", { organization: data?.slug as string });
     router.push(redirectTo, { scroll: false });
   };
 
@@ -37,7 +37,7 @@ export function ButtonActions(organization: Organization) {
       icon: "edit",
       onClick: () => {
         openModal({
-          content: <OrganizationFormDelete {...organization} />,
+          content: <OrganizationFormEdit {...organization} />,
         });
       },
     },

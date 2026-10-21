@@ -28,11 +28,10 @@ export const routes = {
     routes: {
       onboarding: "onboarding",
       main: {
-        prefix: "main",
+        prefix: "m/[organization]",
         routes: {
           overview: "/overview",
           organizations: "/organizations",
-          organization: "/organizations/[slug]",
         },
       },
     },

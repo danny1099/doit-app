@@ -1,11 +1,9 @@
 "use client";
-import Link from "next/link";
 import moment from "moment";
 import type { Organization } from "@prisma/client";
 import { useState } from "react";
 import { useDebounceCallback } from "usehooks-ts";
 import { useTranslations } from "next-intl";
-import { getPrivateRoute } from "@/routes/utils";
 import { useTableSelection } from "@/shared/hooks";
 import { cn, defineColumns, getColor, isUrl, type Color } from "@/shared/utils";
 import { AnimatedContent, SearchBox, EmptyData, Checkbox, Badge, Icon, IconName } from "@/shared/components";
@@ -61,7 +59,6 @@ export const OrganizationListed = () => {
               </TableHeader>
               <TableBody>
                 {filteredOrganizations.map((organization) => {
-                  const organizationRoute = getPrivateRoute("organization", { slug: organization.slug });
                   const [icon, color] = organization.logo?.split(":") || []
 
                   return (
@@ -88,9 +85,7 @@ export const OrganizationListed = () => {
                                     <Icon name={icon as IconName || "workspace"} className="size-4 shrink-0" />
                                   )}
                                 </div>
-                                <Link href={organizationRoute} className="text-foreground hover:text-tertiary">
-                                  {format(organization.name)}
-                                </Link>
+                                {format(organization.name)}
                                 {organization.is_active && <Badge variant="tertiary" className="text-3xs ml-2">{t("current")}</Badge>}
                               </div>
                             )}

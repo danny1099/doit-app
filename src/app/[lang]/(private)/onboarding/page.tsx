@@ -8,8 +8,9 @@ import { OnboardingWizard } from "@/modules/onboarding/components";
 
 export default async function Onboarding() {
   const { user } = await requireAuth();
+  const redirecTo = getPrivateRoute("overview", { organization: user.activeOrganizationId });
 
-  if (user.withOnboarding) redirect(getPrivateRoute("overview"));
+  if (user.withOnboarding) redirect(redirecTo);
 
   return (
     <div className="flex h-dvh flex-col overflow-hidden">

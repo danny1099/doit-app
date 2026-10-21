@@ -1,5 +1,6 @@
 "use client";
 import { useTranslations } from "next-intl";
+import { useParams } from "next/navigation";
 import { getPrivateRoute } from "@/routes/utils";
 import { type IconName, AnimatedContent, Divider } from "@/shared/components";
 import { MenuAccount, MenuGroup, MenuHeader, MenuLink } from "@/modules/private/components";
@@ -7,6 +8,7 @@ import { menuItems, menuSegments } from "@/modules/private/helpers";
 
 export const Menu = () => {
   const t = useTranslations("menu");
+  const { organization } = useParams<{ organization: string }>();
 
   return (
     <div className="border-border/60 flex size-full flex-col border-r transition-all duration-300">
@@ -19,7 +21,7 @@ export const Menu = () => {
                 {menuItems
                   .filter((i) => i.place === group)
                   .map(({ name, path, icon, render }) => {
-                    const redirectTo = getPrivateRoute(path);
+                    const redirectTo = getPrivateRoute(path, { organization });
                     if (render === "divider")
                       return <Divider key={name} type="horizontal" className="bg-border-muted w-full" />;
 
