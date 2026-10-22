@@ -125,7 +125,7 @@ export function DropdownMenuRadioItem({
         data-slot="dropdown-menu-radio-item-indicator"
       >
         <DropdownMenuPrimitive.ItemIndicator>
-          <Icon name="check" className="size-4 shrink-0" />
+          <Icon name="check" className="text-tertiary size-4 shrink-0" />
         </DropdownMenuPrimitive.ItemIndicator>
       </span>
       {children}
@@ -199,7 +199,7 @@ export function DropdownMenuSubTrigger({
       {...props}
     >
       {children}
-      <Icon name="chevron_right" className="cn-rtl-flip ml-auto" />
+      <Icon name="chevron_right" className="cn-rtl-flip ml-auto size-4" />
     </DropdownMenuPrimitive.SubTrigger>
   );
 }

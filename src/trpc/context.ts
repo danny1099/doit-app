@@ -8,7 +8,6 @@ export const createTRPCContext = async (opts: { headers: Headers }) => {
     ...opts,
     db: prisma,
     userId: auth?.user.id,
-    workspaceId: auth?.user.activeWorkspaceId as string | undefined,
     organizationId: auth?.user.activeOrganizationId as string | undefined,
   };
 };

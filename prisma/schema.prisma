@@ -23,7 +23,6 @@ model User {
   role                 String?
   stripeCustomerId     String?  @unique
   activeOrganizationId String?
-  activeWorkspaceId    String?
   language             String?  @default("en")
   createdAt            DateTime @default(now())
   updatedAt            DateTime @updatedAt

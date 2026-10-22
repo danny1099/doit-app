@@ -137,7 +137,18 @@ export const organizationRouter = router({
       };
     }
 
-    /* delete brand with id */
+    /* validate if organization has members */
+    const { data: members } = await tryCatch(ctx.db.member.findMany({ where: { organizationId: id } }));
+    if (Array.isArray(members) && members.length > 0) {
+      return {
+        data: null,
+        status: "error",
+        message: "organization_has_members",
+        code: 500,
+      };
+    }
+
+    /* delete organization with id */
     const { data, error } = await tryCatch(ctx.db.organization.delete({ where: { id } }));
     if (error || !data) {
       return {
@@ -202,7 +213,10 @@ export const organizationRouter = router({
   getAll: authedProcedure.query<APIResult<OrganizationList[]>>(async ({ ctx }) => {
     const { data, error } = await tryCatch(
       ctx.db.organization.findMany({
-        where: { userId: ctx.userId },
+        where: {
+          OR: [{ members: { some: { userId: ctx.userId } } }],
+        },
+        include: { members: true },
       })
     );
 
@@ -216,9 +230,11 @@ export const organizationRouter = router({
       };
     }
 
-    const result = data.map((item) => ({
-      ...item,
-      is_active: item.id === ctx.organizationId,
+    const result = data.map((org) => ({
+      ...org,
+      is_active: org.id === ctx.organizationId,
+      members: org.members.length,
+      role: org.members.find((m) => m.userId === ctx.userId)?.role.toString(),
     }));
 
     return {

@@ -47,7 +47,6 @@ export const auth = betterAuth({
     additionalFields: {
       withOnboarding: { type: "boolean", input: false, defaultValue: false },
       role: { type: "string", input: false, defaultValue: null },
-      activeWorkspaceId: { type: "string", input: false, defaultValue: null },
       activeOrganizationId: { type: "string", input: false, defaultValue: null },
     },
   },

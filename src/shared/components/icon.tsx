@@ -30,6 +30,7 @@ export const iconName = {
   chevron_left: "chevron-left",
   chevron_right: "chevron-right",
   chevron_up: "chevron-up",
+  chevron_expand: "chevron-expand",
   close: "x",
   eye_close: "eye-slash",
   eye_open: "eye",

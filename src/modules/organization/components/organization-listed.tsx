@@ -1,14 +1,14 @@
 "use client";
 import moment from "moment";
-import type { Organization } from "@prisma/client";
 import { useState } from "react";
 import { useDebounceCallback } from "usehooks-ts";
 import { useTranslations } from "next-intl";
 import { useTableSelection } from "@/shared/hooks";
-import { cn, defineColumns, getColor, isUrl, type Color } from "@/shared/utils";
+import { cn, defineColumns, getColor, isUrl, type Color, capitalize } from "@/shared/utils";
 import { AnimatedContent, SearchBox, EmptyData, Checkbox, Badge, Icon, IconName } from "@/shared/components";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/shared/components/table";
 import { ButtonActions, NewOrganizationButton } from "@/modules/organization/components";
+import type { OrganizationList } from "@/modules/organization/types";
 import { trpc } from "@/trpc/client";
 
 /* prettier-ignore */
@@ -22,9 +22,11 @@ export const OrganizationListed = () => {
   const filteredOrganizations = allOrganizations.filter((o) => o.name.toLowerCase().includes(search.toLowerCase()));
 
   /* define table columns for table component */
-  const columnsNames = defineColumns<Organization>({
+  const columnsNames = defineColumns<OrganizationList>({
     name: { style: "w-auto", format: (name) => String(name) },
     slug: { style: "w-fit", format: (slug) => String(slug) },
+    role: { style: "w-24", format: (role) => capitalize(role as string) },
+    members: { style: "w-auto text-center", format: (members) => String(members) },
     createdAt: { style: "w-fit", format: (date) => moment(date as Date).format("DD-MMM-YYYY") },
   });
 

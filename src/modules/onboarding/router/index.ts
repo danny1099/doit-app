@@ -1,9 +1,8 @@
 import type { Workspace } from "@prisma/client";
 import { procedure, router } from "@/trpc/init";
+import { uploadImage } from "@/shared/upload/cloudinary";
 import { isBase64Image, slugSanitize, base64ToFile, tryCatch, generateRandomNumber } from "@/shared/utils";
 import { onboardingSchema } from "@/modules/onboarding/schema";
-import { uploadImage } from "@/shared/upload/cloudinary";
-import { role } from "better-auth/plugins";
 
 export const onboardingRouter = router({
   register: procedure.input(onboardingSchema).mutation<APIResult<Workspace>>(async ({ ctx, input }) => {
@@ -28,7 +27,7 @@ export const onboardingRouter = router({
       };
     }
 
-    const organizationName = `${name.split(" ")[0]}'s Org. Default`;
+    const organizationName = `${name.split(" ")[0]}'s Organization`;
     const organizationSlug = slugSanitize(`${organizationName}-${generateRandomNumber(4)}`);
 
     const { data: orgData, error: orgError } = await tryCatch(
@@ -132,7 +131,6 @@ export const onboardingRouter = router({
           name,
           image: avatarUrl,
           withOnboarding: true,
-          activeWorkspaceId: data.id,
           activeOrganizationId: orgData.id,
           role: "owner",
         },

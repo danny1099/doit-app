@@ -310,10 +310,17 @@
 
   "menu": {
     "platform": "Platform",
-    "logOut": "Log out",
     "items": {
       "overview": "Overview",
       "organizations": "Organizations"
+    },
+    "switcher": {
+      "logOut": "Log out",
+      "role": "I'm a {role} | {count, plural, one {+# member} other {+# members}}",
+      "members": "{count, plural, one {+# member} other {+# members}}",
+      "current": "Current",
+      "invited": "Invited",
+      "title": "Your organizations"
     }
   },
 
@@ -1020,7 +1027,9 @@
     "table": {
       "name": "Name",
       "createdAt": "Created At",
-      "slug": "Organization ID",
+      "slug": "Slug",
+      "role": "Role",
+      "members": "Members",
       "actions": "Actions"
     },
     "options": {
