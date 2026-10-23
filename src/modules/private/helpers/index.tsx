@@ -7,11 +7,6 @@ export const menuSegments: Segment[] = [
     group: "main",
     styles: "shrink-0",
   },
-  {
-    group: "platform",
-    styles: "mt-10",
-    title: "Platform",
-  },
 ] as const;
 
 export const menuItems: MenuItem[] = [
@@ -29,4 +24,5 @@ export const menuItems: MenuItem[] = [
     place: "main",
     icon: "building",
   },
+  { name: "workspaces", path: "workspaces", render: "link", place: "main", icon: "workspace" },
 ] as const;

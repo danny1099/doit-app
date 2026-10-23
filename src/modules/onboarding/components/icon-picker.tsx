@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Avatar, Button, Icon, IconName, ImageFromDevice, P } from "@/shared/components";
 import { cn, baseColors, getColor, type Color, isUrl } from "@/shared/utils";
-import { brandIcons } from "@/modules/onboarding/types";
+import { workspaceIcons } from "@/modules/onboarding/types";
 
 interface IconPickerProps {
   value: string;
@@ -45,7 +45,7 @@ export const IconPicker = ({ value, onChange, className }: IconPickerProps) => {
             <p className="text-3xs text-foreground">{t("title")}</p>
           </div>
           <div className="flex flex-row flex-wrap items-center gap-2">
-            {brandIcons.map((icon) => {
+            {workspaceIcons.map((icon) => {
               const isSelected = iconActive === icon;
               return (
                 <Button

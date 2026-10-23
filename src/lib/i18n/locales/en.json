@@ -269,25 +269,45 @@
       "title": "You're all set!",
       "content": "Nice! Your account is ready — let's do this."
     },
+    "user_already_invited": {
+      "title": "User already invited",
+      "content": "It looks like this user is already invited. Please wait for them to join."
+    },
+    "user_invitation_error": {
+      "title": "Something went wrong",
+      "content": "Something went wrong while inviting this user. Let’s try again."
+    },
+    "user_invited": {
+      "title": "User invited",
+      "content": "Your invitation has been sent. Let’s keep going ✨"
+    },
+    "invitation_accept_error": {
+      "title": "Something went wrong",
+      "content": "Something went wrong while accepting this invitation. Let’s try again."
+    },
+    "invitation_decline_error": {
+      "title": "Something went wrong",
+      "content": "Something went wrong while declining this invitation. Let’s try again."
+    },
     "workspace_not_found": {
       "title": "Workspace not found",
-      "content": "We couldn't find your workspace"
+      "content": "We couldn’t find this workspace. Looks like it doesn’t exist."
     },
     "workspace_already_exists": {
       "title": "Workspace already exists",
-      "content": "Looks like you're already part of our community"
+      "content": "It looks like you already have a workspace with this name."
     },
     "workspace_created": {
       "title": "Workspace created",
-      "content": "Your workspace has been created successfully."
+      "content": "Your workspace is all set up. Let's start creating some tasks! 🚀"
     },
     "workspace_updated": {
       "title": "Workspace updated",
-      "content": "Your workspace has been updated successfully."
+      "content": "Your workspace has been updated. It’s looking good ✨"
     },
     "workspace_deleted": {
       "title": "Workspace deleted",
-      "content": "Your workspace has been deleted successfully."
+      "content": "Your workspace has been deleted. Let´s create another one 🚀"
     }
   },
 
@@ -312,7 +332,8 @@
     "platform": "Platform",
     "items": {
       "overview": "Overview",
-      "organizations": "Organizations"
+      "organizations": "Organizations",
+      "workspaces": "Workspaces"
     },
     "switcher": {
       "logOut": "Log out",
@@ -1027,7 +1048,7 @@
     "table": {
       "name": "Name",
       "createdAt": "Created At",
-      "slug": "Slug",
+      "slug": "ID organization",
       "role": "Role",
       "members": "Members",
       "actions": "Actions"
@@ -1075,6 +1096,16 @@
     }
   },
 
+  "invitation": {
+    "invite-message": "<mark>name</mark> it invites you to join",
+    "join-to": "<strong>organization</strong> as a {role}",
+    "description": "This is your space to collaborate and build something meaningful together. ✨",
+    "expiry": "This invitation expires in {time}",
+    "members": "{count, plural, one {+# member} other {+# members}} have joined",
+    "accept": "Accept invitation",
+    "decline": "Decline"
+  },
+
   "onboarding": {
     "title": "Let's get you set up",
     "description": "A few quick steps and Doit will be ready to roll.",
@@ -1094,7 +1125,7 @@
         "subtitle": "A few details to make DoIt feel yours, like a home.",
         "disclaimer": "Doit will never share your email address with third parties."
       },
-      "brand": {
+      "workspace": {
         "title": "Your workspace",
         "subtitle": "Choose a name and logo — make it yours."
       },
@@ -1123,7 +1154,7 @@
     "form": {
       "name": { "label": "Full name", "placeholder": "e.g. Martina García" },
       "email": { "label": "Email", "placeholder": "The email you used to sign up" },
-      "workspace": { "label": "Workspace name", "placeholder": "e.g. Acme, Home, Freelance" },
+      "workspace": { "label": "Workspace name", "placeholder": "e.g. Acme, Home, Investigation" },
       "continue": "Let's keep going",
       "submit-button": "Set up my account",
       "previous": "Go back"
@@ -1131,6 +1162,70 @@
     "metadata": {
       "title": "Welcome to Doit",
       "description": "Let's get you set up — it'll only take a minute."
+    }
+  },
+
+  "workspaces": {
+    "title": "Workspaces",
+    "description": "Everything you need to organize your task and projects.",
+    "search_box": "Type something to search in your workspaces...",
+    "no_description": "This workspace has no description yet. let's add one!",
+    "add-button": "Add workspace",
+    "current": "Current",
+    "no_results": {
+      "title": "No workspaces found",
+      "subtitle": "It looks like you don't have any workspaces yet. Let's create one!"
+    },
+    "table": {
+      "name": "Name",
+      "createdAt": "Created At",
+      "slug": "ID workspace",
+      "actions": "Actions"
+    },
+    "options": {
+      "edit": "Edit",
+      "delete": "Delete",
+      "get_into": "Get into",
+      "cancel": "Cancel"
+    },
+    "no-results": "No results found",
+    "form": {
+      "name": { "label": "Workspace name", "placeholder": "e.g. Acme, Home, Investigation" },
+      "description": {
+        "label": "Description",
+        "placeholder": "Describe your what your workspace does and what makes it unique"
+      },
+      "submit-button": "Save Workspace",
+      "cancel-button": "Cancel"
+    },
+    "aditional-info": {
+      "title": "More info",
+      "description": "Describe your workspace in more detail"
+    },
+    "modal": {
+      "title": "Workspace",
+      "subtitle": "Choose a name and logo — make it yours.",
+      "delete": {
+        "title": "Delete workspace?",
+        "subtitle": "This will remove the workspace and its data.",
+        "description": "This action can't be undone.",
+        "cancel-button": "No, keep it",
+        "confirm-button": "Yes, delete it"
+      }
+    },
+    "metadata": {
+      "title": "Your Workspaces",
+      "description": "All your workspaces will be listed here. You can create new ones or update existing ones."
+    },
+    "avatar_picker": {
+      "title": "Pick an avatar that feels like you.",
+      "upload_from_device": "Or click the camera icon to upload a photo."
+    },
+    "icons_picker": {
+      "title": "Pick a symbol",
+      "upload_from_device": "Or click the camera icon to upload an image",
+      "icon_color": "Give it some color",
+      "apply": "I want this symbol"
     }
   }
 }

@@ -32,6 +32,8 @@ export const routes = {
         routes: {
           overview: "/overview",
           organizations: "/organizations",
+          workspaces: "/workspaces",
+          workspace: "/workspaces/[slug]",
         },
       },
     },

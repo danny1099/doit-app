@@ -28,7 +28,7 @@ export const MenuAccount = ({ className }: MenuAccountProps) => {
   const { user, isPending, logOut, refetch } = useAuth();
   const avatarUrl = user?.image || fallbackAvatar(user?.name || (user?.email as string));
 
-  const { data: allOrganizations, isLoading } = trpc.organization.getAll.useQuery();
+  const { data: allOrganizations } = trpc.organization.getAll.useQuery();
   const { mutateAsync: setActive } = trpc.organization.makeAsDefault.useMutation();
   const selected = allOrganizations?.data?.find((o) => o.id === organization) ?? allOrganizations?.data?.[0] ?? null;
 

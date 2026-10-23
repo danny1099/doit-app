@@ -8,8 +8,8 @@ export const FLOW_STEPS: Partial<Record<StepName, StepConfig>> = {
   },
   workspace: {
     name: "workspace",
-    title: "steps.brand.title",
-    description: "steps.brand.subtitle",
+    title: "steps.workspace.title",
+    description: "steps.workspace.subtitle",
   },
   finish: {
     name: "finish",

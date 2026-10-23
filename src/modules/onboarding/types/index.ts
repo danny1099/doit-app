@@ -1,7 +1,7 @@
 import type { useTranslations } from "next-intl";
 import type { IconName } from "@/shared/components";
 
-export const brandIcons: IconName[] = [
+export const workspaceIcons: IconName[] = [
   "app",
   "apple",
   "anthropic",

@@ -6,12 +6,12 @@ import { I18nMessage, useTranslations } from "next-intl";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useToast } from "@/shared/hooks";
 import { useAuth } from "@/modules/auth/hooks";
+import { getPrivateRoute } from "@/routes/utils";
 import { cn, Color, fallbackAvatar, getColor, isUrl } from "@/shared/utils";
 import { Avatar, Button, Icon, IconName, P, Form } from "@/shared/components";
 import { onboardingSchema, type OnboardingSchema } from "@/modules/onboarding/schema";
 import { useOnboardingStore } from "@/modules/onboarding/store";
 import { trpc } from "@/trpc/client";
-import { getPrivateRoute } from "@/routes/utils";
 
 /* prettier-ignore */
 export const FormFinish = () => {
@@ -62,7 +62,7 @@ export const FormFinish = () => {
     toast({ message: message as I18nMessage, type: "success" });
 
     /* navigate to private route overview */
-    const redirectTo = getPrivateRoute("overview");
+    const redirectTo = getPrivateRoute("overview", {organization: data.organizationId});
     router.push(redirectTo, { scroll: false });
   };
 
