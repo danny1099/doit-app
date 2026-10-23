@@ -1168,6 +1168,7 @@
   "workspaces": {
     "title": "Workspaces",
     "description": "Everything you need to organize your task and projects.",
+    "wigget": "This is all the workspaces you have created",
     "search_box": "Type something to search in your workspaces...",
     "no_description": "This workspace has no description yet. let's add one!",
     "add-button": "Add workspace",

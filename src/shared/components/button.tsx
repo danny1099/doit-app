@@ -1,6 +1,6 @@
 import * as React from "react";
-import { cva, type VariantProps } from "class-variance-authority";
 import { Slot } from "radix-ui";
+import { cva, type VariantProps } from "class-variance-authority";
 import { Icon, IconName } from "@/shared/components/icon";
 import { cn } from "@/shared/utils";
 

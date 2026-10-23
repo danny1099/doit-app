@@ -91,6 +91,7 @@ export const iconName = {
   MP: "credit-card-2-front",
   stars: "stars",
   chat: "chat-left-dots",
+  square: "square-fill",
 };
 
 export type IconName = keyof typeof iconName;

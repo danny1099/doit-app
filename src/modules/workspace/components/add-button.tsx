@@ -29,3 +29,25 @@ export const NewWorkspaceButton = ({ className }: Props) => {
     </Button>
   );
 };
+
+export const WiggetWorkspaceButton = ({ className }: Props) => {
+  const { openModal } = useModal();
+  const t = useTranslations("workspaces");
+
+  return (
+    <Button
+      icon="add"
+      size="sm"
+      onClick={() => {
+        openModal({
+          title: t("modal.title"),
+          description: t("modal.subtitle"),
+          content: <WorkspaceFormCreate />,
+        });
+      }}
+      className={cn("text-2xs mt-3 rounded-xl", className)}
+    >
+      {t("add-button")}
+    </Button>
+  );
+};
