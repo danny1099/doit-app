@@ -84,7 +84,7 @@ export const OrganizationListed = () => {
                                         loading="lazy"
                                       />
                                   ): (
-                                    <Icon name={icon as IconName || "workspace"} className="size-4 shrink-0" />
+                                    <Icon name={icon as IconName || "building"} className="size-4 shrink-0" />
                                   )}
                                 </div>
                                 {format(organization.name)}

@@ -7,12 +7,16 @@ interface OrganizationLogoProps {
 }
 
 export const OrganizationLogo = ({ url, className }: OrganizationLogoProps) => {
-  const isUrlType = isUrl("http");
-  const [icon, _color] = url.split(":") ?? [];
+  const isUrlType = isUrl(url);
 
-  return isUrlType ? (
-    <div className={cn("bg-accent size-7 shrink-0 rounded-full", className)}>
-      <Icon name={icon as IconName} className="size-4 shrink-0" />
+  return !isUrlType ? (
+    <div
+      className={cn(
+        "bg-accent text-accent-foreground flex size-7 shrink-0 items-center justify-center rounded-full",
+        className
+      )}
+    >
+      <Icon name="building" className="size-4 shrink-0" />
     </div>
   ) : (
     <img src={url} alt="Organization Logo" className={cn("size-7 shrink-0 rounded-md object-cover", className)} />

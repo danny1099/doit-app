@@ -1,7 +1,7 @@
 import type { Workspace } from "@prisma/client";
 import { procedure, router } from "@/trpc/init";
 import { uploadImage } from "@/shared/upload/cloudinary";
-import { isBase64Image, slugSanitize, base64ToFile, tryCatch, generateRandomNumber } from "@/shared/utils";
+import { isBase64Image, slugSanitize, base64ToFile, tryCatch, generateRandomString, fallbackAvatar } from "@/shared/utils";
 import { onboardingSchema } from "@/modules/onboarding/schema";
 
 export const onboardingRouter = router({
@@ -28,7 +28,7 @@ export const onboardingRouter = router({
     }
 
     const organizationName = `${name.split(" ")[0]}'s Organization`;
-    const organizationSlug = slugSanitize(`${organizationName}-${generateRandomNumber(4)}`);
+    const organizationSlug = slugSanitize(`${organizationName}-${generateRandomString(4)}`);
 
     const { data: orgData, error: orgError } = await tryCatch(
       ctx.db.organization.upsert({
@@ -38,6 +38,7 @@ export const onboardingRouter = router({
           name: organizationName,
           slug: organizationSlug,
           status: "ACTIVE",
+          logo: fallbackAvatar(organizationSlug),
           userId: ctx.userId,
         },
       })

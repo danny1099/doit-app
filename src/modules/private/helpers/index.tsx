@@ -1,5 +1,5 @@
 import type { MenuItem, Segment } from "@/modules/private/types";
-import { WorkspacesWigget } from "@/modules/workspace/components";
+import { WorkspacesWiget } from "@/modules/workspace/components";
 
 export type MenuView = "admin" | "hub";
 
@@ -11,7 +11,7 @@ export const menuSegments: Segment[] = [
   {
     group: "component",
     styles: "shrink-0",
-    child: <WorkspacesWigget />,
+    child: <WorkspacesWiget />,
   },
 ] as const;
 

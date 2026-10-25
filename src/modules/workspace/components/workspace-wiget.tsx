@@ -7,7 +7,7 @@ import { Icon, P } from "@/shared/components";
 import { WiggetWorkspaceButton } from "@/modules/workspace/components";
 import { trpc } from "@/trpc/client";
 
-export const WorkspacesWigget = () => {
+export const WorkspacesWiget = () => {
   const [mounted, setMounted] = useState(false);
   const [workspaces] = trpc.workspace.getAll.useSuspenseQuery();
   const allWorkspaces = workspaces?.data || [];
