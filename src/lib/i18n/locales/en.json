@@ -339,7 +339,7 @@
       "logOut": "Log out",
       "role": "I'm a {role} | {count, plural, one {+# member} other {+# members}}",
       "members": "{count, plural, one {+# member} other {+# members}}",
-      "current": "Current",
+      "current": "Organization",
       "invited": "Invited",
       "title": "Your organizations"
     }

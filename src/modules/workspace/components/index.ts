@@ -7,5 +7,5 @@ export * from "./workspace-form-create";
 export * from "./workspace-form-delete";
 export * from "./workspace-listed";
 export * from "./workspace-options";
-export * from "./workspace-wiget";
-export * from "./workspace-wiget-skeleton";
+export * from "./workspace-widget";
+export * from "./workspace-widget-skeleton";

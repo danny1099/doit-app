@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { getPrivateRoute } from "@/routes/utils";
 import { Icon, P } from "@/shared/components";
-import { WiggetWorkspaceButton } from "@/modules/workspace/components";
+import { WidgetWorkspaceButton, WorkspacesWidgetSkeleton } from "@/modules/workspace/components";
 import { trpc } from "@/trpc/client";
 
-export const WorkspacesWiget = () => {
+export const WorkspacesWidget = () => {
   const [mounted, setMounted] = useState(false);
   const [workspaces] = trpc.workspace.getAll.useSuspenseQuery();
   const allWorkspaces = workspaces?.data || [];
@@ -17,7 +17,7 @@ export const WorkspacesWiget = () => {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null;
+  if (!mounted) return <WorkspacesWidgetSkeleton />;
 
   return (
     <div className="bg-accent mt-10 flex max-h-48 flex-col rounded-lg px-2 py-3">
@@ -36,7 +36,7 @@ export const WorkspacesWiget = () => {
           );
         })}
       </ul>
-      <WiggetWorkspaceButton />
+      <WidgetWorkspaceButton />
     </div>
   );
 };
