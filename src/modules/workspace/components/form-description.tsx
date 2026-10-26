@@ -81,10 +81,10 @@ export const FormDescription = ({ workspace }: FormDescriptionProps) => {
                   </FormControl>
                   <div className="mt-1 flex w-full flex-row items-center justify-end gap-2">
                     <Button type="reset" variant="outline" size="sm" className="text-3xs size-fit py-0.5" onClick={() => setIsEditing(false)}>
-                      {t("form.cancel")}
+                      {t("form.cancel-button")}
                     </Button>
                     <Button type="submit" size="sm" className="text-3xs size-fit py-0.5">
-                      {t("form.submit")}
+                      {t("form.submit-button")}
                     </Button>
                   </div>
                 </FormItem>

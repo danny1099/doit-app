@@ -34,6 +34,9 @@ model User {
   invitations   Invitation[]
   workspaces    Workspace[]
   organizations Organization[]
+  tasks         Task[]
+  views         View[]
+  dailyFocus    DailyFocus[]
 
   @@unique([email])
   @@map("user")
@@ -198,7 +201,187 @@ model Workspace {
 
   organization Organization @relation(fields: [organizationId], references: [id])
   user         User         @relation(fields: [userId], references: [id])
+  tasks        Task[]
+  views        View[]
+  projects     Project[]
+  tags         Tag[]
 
   @@index([organizationId])
   @@map("workspace")
+}
+
+enum UserMode {
+  DEV
+  STUDENT
+  PERSONAL
+}
+
+enum TypeView {
+  LIST
+  PROJECT
+}
+
+model View {
+  id           String   @id @default(cuid())
+  name         String
+  description  String?
+  icon         String?
+  typeView     TypeView @default(LIST)
+  mode         UserMode @default(PERSONAL)
+  customFields Json?
+  workspaceId  String
+  userId       String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tasks     Task[]
+  projects  Project[]
+
+  @@index([workspaceId, userId])
+  @@index([mode])
+  @@map("views")
+}
+
+enum TaskType {
+  DIGITAL
+  LOCATION_BASED
+  COMMUNICATION
+  SCHEDULED
+}
+
+enum TaskStatus {
+  INBOX
+  TODO
+  IN_PROGRESS
+  BLOCKED
+  DONE
+  ARCHIVED
+}
+
+enum TaskPriority {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+}
+
+model Task {
+  id               String       @id @default(cuid())
+  title            String
+  content          String?
+  rawInput         String?
+  type             TaskType     @default(DIGITAL)
+  status           TaskStatus   @default(INBOX)
+  priority         TaskPriority @default(MEDIUM)
+  dueDate          DateTime?
+  scheduledAt      DateTime?
+  estimatedMinutes Int?
+  actualMinutes    Int?
+  locationName     String?
+  latitude         Float?
+  longitude        Float?
+  placeId          String?
+  aiClassified     Boolean      @default(false)
+  aiConfidence     Float?
+  aiRawResponse    Json?
+  workspaceId      String
+  viewId           String
+  projectId        String?
+  userId           String
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @updatedAt
+  completedAt      DateTime?
+
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  view      View      @relation(fields: [viewId], references: [id], onDelete: Cascade)
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  project   Project?  @relation(fields: [projectId], references: [id])
+
+  taskTags   TaskTag[]
+  blocking   TaskDependency[] @relation("BlockingTask")
+  blockedBy  TaskDependency[] @relation("BlockedTask")
+  dailyFocus DailyFocus[]
+
+  @@index([workspaceId, status])
+  @@index([userId, status])
+  @@index([type])
+  @@map("tasks")
+}
+
+model Project {
+  id          String   @id @default(uuid())
+  name        String
+  description String?
+  color       String?
+  archived    Boolean  @default(false)
+  workspaceId String
+  viewId      String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  view      View      @relation(fields: [viewId], references: [id], onDelete: Cascade)
+
+  tasks Task[]
+
+  @@index([workspaceId])
+  @@map("projects")
+}
+
+model Tag {
+  id          String   @id @default(uuid())
+  name        String
+  color       String?
+  workspaceId String
+  createdAt   DateTime @default(now())
+
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  taskTags  TaskTag[]
+
+  @@unique([workspaceId, name])
+  @@map("tags")
+}
+
+model TaskTag {
+  taskId String
+  tagId  String
+
+  task Task @relation(fields: [taskId], references: [id], onDelete: Cascade)
+  tag  Tag  @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([taskId, tagId])
+  @@map("task_tags")
+}
+
+model TaskDependency {
+  id             String   @id @default(uuid())
+  blockingTaskId String
+  blockedTaskId  String
+  aiSuggested    Boolean  @default(false)
+  createdAt      DateTime @default(now())
+
+  blockingTask Task @relation("BlockingTask", fields: [blockingTaskId], references: [id], onDelete: Cascade)
+  blockedTask  Task @relation("BlockedTask", fields: [blockedTaskId], references: [id], onDelete: Cascade)
+
+  @@unique([blockingTaskId, blockedTaskId])
+  @@map("task_dependencies")
+}
+
+model DailyFocus {
+  id        String   @id @default(uuid())
+  userId    String
+  taskId    String
+  date      DateTime @db.Date
+  reason    String?
+  completed Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  task Task @relation(fields: [taskId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, taskId, date])
+  @@index([userId, date])
+  @@map("daily_focus")
 }

@@ -9,7 +9,7 @@ import { trpc } from "@/trpc/client";
 
 export const WorkspacesWidget = () => {
   const [mounted, setMounted] = useState(false);
-  const [workspaces] = trpc.workspace.getAll.useSuspenseQuery();
+  const { data: workspaces } = trpc.workspace.getAll.useQuery();
   const allWorkspaces = workspaces?.data || [];
   const t = useTranslations("workspaces");
 
