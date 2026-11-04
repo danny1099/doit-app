@@ -35,7 +35,7 @@ model User {
   workspaces    Workspace[]
   organizations Organization[]
   tasks         Task[]
-  views         View[]
+  lists         List[]
   dailyFocus    DailyFocus[]
 
   @@unique([email])
@@ -201,10 +201,11 @@ model Workspace {
 
   organization Organization @relation(fields: [organizationId], references: [id])
   user         User         @relation(fields: [userId], references: [id])
-  tasks        Task[]
-  views        View[]
-  projects     Project[]
-  tags         Tag[]
+
+  tasks    Task[]
+  lists    List[]
+  projects Project[]
+  tags     Tag[]
 
   @@index([organizationId])
   @@map("workspace")
@@ -216,28 +217,28 @@ enum UserMode {
   PERSONAL
 }
 
-enum TypeView {
+enum TypeList {
   LIST
   PROJECT
 }
 
-model View {
-  id           String   @id @default(cuid())
-  name         String
-  description  String?
-  icon         String?
-  typeView     TypeView @default(LIST)
-  mode         UserMode @default(PERSONAL)
-  customFields Json?
-  workspaceId  String
-  userId       String
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+model List {
+  id          String   @id @default(cuid())
+  name        String
+  icon        String?
+  typeList    TypeList @default(LIST)
+  mode        UserMode @default(PERSONAL)
+  config      Json?
+  workspaceId String
+  userId      String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 
   workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
   user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
-  tasks     Task[]
-  projects  Project[]
+
+  tasks    Task[]
+  projects Project[]
 
   @@index([workspaceId, userId])
   @@index([mode])
@@ -287,7 +288,7 @@ model Task {
   aiConfidence     Float?
   aiRawResponse    Json?
   workspaceId      String
-  viewId           String
+  listId           String
   projectId        String?
   userId           String
   createdAt        DateTime     @default(now())
@@ -295,7 +296,7 @@ model Task {
   completedAt      DateTime?
 
   workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
-  view      View      @relation(fields: [viewId], references: [id], onDelete: Cascade)
+  list      List      @relation(fields: [listId], references: [id], onDelete: Cascade)
   user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
   project   Project?  @relation(fields: [projectId], references: [id])
 
@@ -317,12 +318,12 @@ model Project {
   color       String?
   archived    Boolean  @default(false)
   workspaceId String
-  viewId      String
+  listId      String
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
   workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
-  view      View      @relation(fields: [viewId], references: [id], onDelete: Cascade)
+  list      List      @relation(fields: [listId], references: [id], onDelete: Cascade)
 
   tasks Task[]
 
