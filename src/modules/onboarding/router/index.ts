@@ -119,6 +119,20 @@ export const onboardingRouter = router({
       };
     }
 
+    /* create list default for the new workspace */
+    await tryCatch(
+      ctx.db.list.create({
+        data: {
+          name: "My List",
+          icon: "file:black",
+          typeList: "LIST",
+          mode: "PERSONAL",
+          userId: ctx.userId,
+          workspaceId: data.id,
+        },
+      })
+    );
+
     /* upload image avatar to cloudinary and get secure url as avatar */
     const avatarIsBase64 = isBase64Image(avatar as string);
     const avatarToFile = avatarIsBase64 ? await base64ToFile(avatar as string) : null;
