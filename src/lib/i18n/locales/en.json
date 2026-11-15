@@ -289,6 +289,38 @@
       "title": "Something went wrong",
       "content": "Something went wrong while declining this invitation. Let’s try again."
     },
+    "list_not_found": {
+      "title": "List not found",
+      "content": "We couldn’t find this list. It may have been deleted."
+    },
+    "list_created": {
+      "title": "List created",
+      "content": "Your list is ready. Let’s fill it with something worth doing."
+    },
+    "list_updated": {
+      "title": "List updated",
+      "content": "Your changes have been saved."
+    },
+    "list_deleted": {
+      "title": "List deleted",
+      "content": "The list has been removed from your workspace."
+    },
+    "task_not_found": {
+      "title": "Task not found",
+      "content": "We couldn’t find this task. It may have been deleted."
+    },
+    "task_created": {
+      "title": "Task created",
+      "content": "One less thing to keep in your head. It’s on the list now."
+    },
+    "task_updated": {
+      "title": "Task updated",
+      "content": "Your changes have been saved."
+    },
+    "task_deleted": {
+      "title": "Task deleted",
+      "content": "The task has been removed from your list."
+    },
     "workspace_not_found": {
       "title": "Workspace not found",
       "content": "We couldn’t find this workspace. Looks like it doesn’t exist."
@@ -333,7 +365,8 @@
     "items": {
       "overview": "Overview",
       "organizations": "Organizations",
-      "workspaces": "Workspaces"
+      "workspaces": "Workspaces",
+      "tasks": "Tasks"
     },
     "switcher": {
       "logOut": "Log out",
@@ -1227,6 +1260,151 @@
       "upload_from_device": "Or click the camera icon to upload an image",
       "icon_color": "Give it some color",
       "apply": "I want this symbol"
+    }
+  },
+
+  "lists": {
+    "title": "Lists",
+    "widget": "This is all the lists you have created",
+    "description": "Group your tasks in lists that match the way you work.",
+    "search_box": "Type something to search in your lists...",
+    "add-button": "Add list",
+    "edit_tooltip": "Edit list",
+    "empty": {
+      "title": "No lists yet",
+      "subtitle": "Create your first list to start organizing your tasks."
+    },
+    "no_results": {
+      "title": "No lists found",
+      "subtitle": "It looks like there are no lists matching your search."
+    },
+    "mode": {
+      "personal": {
+        "label": "Personal",
+        "description": "For your personal tasks in real life."
+      },
+      "student": {
+        "label": "Student",
+        "description": "For your academic projects or research."
+      },
+      "dev": {
+        "label": "Dev",
+        "description": "For your development tasks and projects."
+      }
+    },
+    "table": {
+      "name": "Name",
+      "mode": "Mode",
+      "createdAt": "Created At"
+    },
+    "form": {
+      "name": {
+        "label": "List name",
+        "placeholder": "e.g. Product, University, Home"
+      },
+      "mode": {
+        "label": "Mode",
+        "placeholder": "Choose a mode"
+      },
+      "create-submit-button": "Create list",
+      "edit-submit-button": "Save list",
+      "cancel-button": "Cancel"
+    },
+    "options": {
+      "edit": "Edit",
+      "delete": "Delete",
+      "cancel": "Cancel"
+    },
+    "modal": {
+      "title": "New list",
+      "subtitle": "Give your list a name, a symbol and a mode.",
+      "edit": {
+        "title": "Edit list",
+        "subtitle": "Update the name, symbol or mode of this list."
+      },
+      "delete": {
+        "title": "Delete list?",
+        "subtitle": "This will remove the list and its data.",
+        "description": "This action can't be undone.",
+        "cancel-button": "No, keep it",
+        "confirm-button": "Yes, delete it"
+      }
+    },
+    "icons_picker": {
+      "title": "Pick a symbol",
+      "icon_color": "Give it some color",
+      "apply": "I want this symbol"
+    },
+    "metadata": {
+      "title": "Your Lists",
+      "description": "All your lists will be listed here. You can create new ones or update existing ones."
+    }
+  },
+
+  "tasks": {
+    "title": "Tasks",
+    "description": "Everything in the right place. Organize and focus on what matters today.",
+    "search_box": "Type something to search in your tasks...",
+    "add-button": "Add task",
+    "add-list-button": "New list",
+    "empty": {
+      "title": "No tasks yet",
+      "subtitle": "Add the first task to this list and get it out of your head."
+    },
+    "no_results": {
+      "title": "No tasks found",
+      "subtitle": "It looks like there are no tasks matching your search."
+    },
+    "table": {
+      "title": "Task",
+      "priority": "Priority",
+      "status": "Status",
+      "createdAt": "Created At"
+    },
+    "priority": {
+      "low": "Low",
+      "medium": "Medium",
+      "high": "High",
+      "urgent": "Urgent"
+    },
+    "status": {
+      "inbox": "Inbox",
+      "todo": "To do",
+      "in_progress": "In progress",
+      "blocked": "Blocked",
+      "done": "Done",
+      "archived": "Archived"
+    },
+    "form": {
+      "list": {
+        "label": "List"
+      },
+      "title": {
+        "label": "Task",
+        "placeholder": "What needs to get done?"
+      },
+      "content": {
+        "label": "Notes",
+        "placeholder": "Add context, links or details..."
+      },
+      "priority": {
+        "label": "Priority",
+        "placeholder": "Choose a priority"
+      },
+      "submit-button": "Create task",
+      "cancel-button": "Cancel"
+    },
+    "modal": {
+      "title": "New task",
+      "subtitle": "Add it now, organize it later."
+    },
+    "quick_capture": {
+      "placeholder": "Capture a task with AI — coming soon",
+      "shortcut_first": "⌘ + K"
+    },
+    "metadata": {
+      "title": "{list} tasks",
+      "description": "{list} tasks in Doit. Organize and focus on what matters today."
     }
   }
 }

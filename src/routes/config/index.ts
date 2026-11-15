@@ -34,6 +34,8 @@ export const routes = {
           organizations: "/organizations",
           workspaces: "/workspaces",
           workspace: "/workspaces/[slug]",
+          tasks: "/tasks",
+          task: "/tasks/[list]",
         },
       },
     },

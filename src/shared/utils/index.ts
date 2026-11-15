@@ -203,13 +203,13 @@ export const baseColors = {
 export const colors = {
   gray: "bg-gray-200 text-gray-800 ring-gray-300 dark:text-gray-200 dark:bg-gray-700 dark:ring-gray-700",
   black: "bg-black text-white ring-black dark:bg-stone-900 dark:ring-stone-900 dark:text-stone-200",
-  blue: "bg-blue-200 text-blue-700 ring-blue-300 dark:text-blue-200 dark:bg-blue-900 dark:ring-blue-900",
-  green: "bg-green-200 text-green-700 ring-green-300 dark:text-green-200 dark:bg-green-900 dark:ring-green-900",
-  red: "bg-red-200 text-red-700 ring-red-300 dark:text-red-200 dark:bg-red-900 dark:ring-red-900",
-  purple: "bg-purple-200 text-purple-700 ring-purple-300 dark:text-purple-200 dark:bg-purple-900 dark:ring-purple-900",
+  blue: "bg-blue-100 text-blue-700 ring-blue-200 dark:text-blue-200 dark:bg-blue-900 dark:ring-blue-900",
+  green: "bg-green-100 text-green-700 ring-green-200 dark:text-green-200 dark:bg-green-900 dark:ring-green-900",
+  red: "bg-red-100 text-red-700 ring-red-200 dark:text-red-200 dark:bg-red-900 dark:ring-red-900",
+  purple: "bg-purple-100 text-purple-700 ring-purple-200 dark:text-purple-200 dark:bg-purple-900 dark:ring-purple-900",
   fuchsia:
-    "bg-fuchsia-200 text-fuchsia-700 ring-fuchsia-300 dark:text-fuchsia-200 dark:bg-fuchsia-900 dark:ring-fuchsia-900",
-  yellow: "bg-yellow-200 text-yellow-700 ring-yellow-300 dark:text-yellow-200 dark:bg-yellow-700 dark:ring-yellow-700",
+    "bg-fuchsia-100 text-fuchsia-700 ring-fuchsia-200 dark:text-fuchsia-200 dark:bg-fuchsia-900 dark:ring-fuchsia-900",
+  yellow: "bg-yellow-100 text-yellow-600 ring-yellow-200 dark:text-yellow-200 dark:bg-yellow-700 dark:ring-yellow-700",
 };
 
 export type Color = keyof typeof colors;

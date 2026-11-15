@@ -26,11 +26,13 @@ export const iconName = {
   caret_down: "caret-down",
   caret_up: "caret-up",
   check: "check2",
+  task: "clipboard-check",
   chevron_down: "chevron-down",
   chevron_left: "chevron-left",
   chevron_right: "chevron-right",
   chevron_up: "chevron-up",
   chevron_expand: "chevron-expand",
+  arrow_send: "arrow-return-right",
   close: "x",
   eye_close: "eye-slash",
   eye_open: "eye",
@@ -54,6 +56,7 @@ export const iconName = {
   edit: "pencil",
   delete: "trash",
   info: "info-circle",
+  circle: "circle-fill",
   repeat: "repeat",
   persons: "people",
   globe: "globe",
@@ -92,6 +95,8 @@ export const iconName = {
   stars: "stars",
   chat: "chat-left-dots",
   square: "square-fill",
+  dev: "code-slash",
+  student: "mortarboard",
 };
 
 export type IconName = keyof typeof iconName;

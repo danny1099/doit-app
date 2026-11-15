@@ -12,10 +12,10 @@ interface CheckboxProps extends React.ComponentPropsWithoutRef<typeof CheckboxPr
 /* prettier-ignore */
 export const CheckboxCard = React.forwardRef<React.ElementRef<typeof CheckboxPrimitive.Root>, CheckboxProps>(
   ({ className, children, ...props }, ref) => (
-      <CheckboxPrimitive.Root ref={ref} {...props} className={cn("peer group ring-input data-[state=checked]:bg-accent/65 data-[state=checked]:ring-tertiary/70 relative rounded-sm data-[state=checked]:ring-1", className)}>
+      <CheckboxPrimitive.Root ref={ref} {...props} className={cn("peer group ring-input data-[state=checked]:bg-accent data-[state=checked]:ring-action relative rounded-lg data-[state=checked]:ring-1", className)}>
         {children}
         <CheckboxPrimitive.Indicator className="absolute top-2 right-2">
-          <div className="h-4 w-4 flex items-center justify-center rounded-full bg-tertiary text-tertiary-foreground">
+          <div className="h-4 w-4 flex items-center justify-center rounded-full bg-action text-action-foreground">
             {props.checkedIcon || <Icon name="check" className="size-3 shrink-0" />}
           </div>
         </CheckboxPrimitive.Indicator>

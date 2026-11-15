@@ -3,7 +3,7 @@ import type { IconName } from "@/shared/components";
 
 export interface Item {
   name: string;
-  path: Exclude<PrivateRoute, "workspace">;
+  path: Exclude<PrivateRoute, "workspace" | "task">;
   icon?: IconName;
 }
 

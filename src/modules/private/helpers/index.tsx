@@ -1,5 +1,5 @@
 import type { MenuItem, Segment } from "@/modules/private/types";
-import { WorkspacesWidget } from "@/modules/workspace/components";
+import { ListsWidget } from "@/modules/list/components";
 
 export type MenuView = "admin" | "hub";
 
@@ -11,7 +11,7 @@ export const menuSegments: Segment[] = [
   {
     group: "component",
     styles: "shrink-0",
-    child: <WorkspacesWidget />,
+    child: <ListsWidget />,
   },
 ] as const;
 
@@ -30,5 +30,6 @@ export const menuItems: MenuItem[] = [
     place: "main",
     icon: "building",
   },
+  { name: "tasks", path: "tasks", render: "link", place: "main", icon: "task" },
   { name: "workspaces", path: "workspaces", render: "link", place: "main", icon: "workspace" },
 ] as const;
