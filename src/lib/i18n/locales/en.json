@@ -1402,6 +1402,14 @@
       "placeholder": "Capture a task with AI — coming soon",
       "shortcut_first": "⌘ + K"
     },
+    "views": {
+      "title": "Add a new view",
+      "subtitle": "Choose a view that fits your workflow.",
+      "kanban": "Kanban",
+      "list": "List",
+      "calendar": "Calendar",
+      "table": "Table"
+    },
     "metadata": {
       "title": "{list} tasks",
       "description": "{list} tasks in Doit. Organize and focus on what matters today."

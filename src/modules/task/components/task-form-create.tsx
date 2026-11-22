@@ -1,5 +1,6 @@
 "use client";
 import { useForm } from "react-hook-form";
+import { useParams } from "next/navigation";
 import { I18nMessage, useTranslations } from "next-intl";
 import { zodResolver } from "@hookform/resolvers/zod";
 import type { List } from "@prisma/client";
@@ -19,19 +20,16 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { taskSchema, type TaskSchema } from "@/modules/task/schema";
 import { trpc, useUtils } from "@/trpc/client";
 
-interface TaskFormCreateProps {
-  list: List;
-}
-
 /* prettier-ignore */
-export const TaskFormCreate = ({ list }: TaskFormCreateProps) => {
+export const TaskFormCreate = () => {
   const toast = useToast();
   const t = useTranslations("tasks");
   const { closeModal } = useModal();
-
+  const { list } = useParams<{ list: string }>();
+  
   const utils = useUtils();
   const { mutateAsync, isPending } = trpc.task.create.useMutation({
-    onSuccess: () => utils.task.getByList.invalidate({ param: list.id }),
+    onSuccess: () => utils.task.getByList.invalidate({ param: list }),
   });
 
   const form = useForm<TaskSchema>({
@@ -52,7 +50,7 @@ export const TaskFormCreate = ({ list }: TaskFormCreateProps) => {
   ] as const;
 
   const onSubmit = async (values: TaskSchema) => {
-    const { error, message } = await mutateAsync({ ...values, listId: list.id });
+    const { error, message } = await mutateAsync({ ...values, listId: list });
 
     if (error && message) {
       toast({ message, type: "error" });
@@ -68,7 +66,7 @@ export const TaskFormCreate = ({ list }: TaskFormCreateProps) => {
       <form onSubmit={form.handleSubmit(onSubmit)} className="flex h-full flex-col max-sm:px-4 md:w-110">
         <div className="bg-accent mb-4 flex flex-row items-center gap-2 rounded-lg px-3 py-2">
           <span className="text-muted-foreground text-3xs">{t("form.list.label")}</span>
-          <span className="text-foreground text-2xs font-medium">{list.name}</span>
+          <span className="text-foreground text-2xs font-medium">{list}</span>
         </div>
         <div className="flex h-fit w-full flex-col gap-3">
           <FormField

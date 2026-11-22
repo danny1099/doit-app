@@ -16,11 +16,3 @@ export default async function Tasks() {
     </HydrateClient>
   );
 }
-
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("tasks.metadata");
-  return {
-    title: t("title"),
-    description: t("description"),
-  };
-}

@@ -97,6 +97,14 @@ export const iconName = {
   square: "square-fill",
   dev: "code-slash",
   student: "mortarboard",
+  mic: "mic",
+  filter: "funnel",
+  sort: "arrow-down-up",
+  sort_down: "sort-alpha-down",
+  sort_up: "sort-alpha-up-alt",
+  table: "table",
+  kanban: "kanban",
+  list: "view-list",
 };
 
 export type IconName = keyof typeof iconName;

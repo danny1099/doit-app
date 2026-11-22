@@ -30,7 +30,7 @@ export const AuthWithOauth = () => {
       >
         Google
         {lastMethod === "google" && (
-          <Badge className="bg-muted/55 text-foreground/80 text-4xs dark:bg-muted/80 absolute right-2 dark:text-white/80">
+          <Badge className="bg-secondary text-foreground/80 text-4xs dark:bg-muted/70 absolute right-2 dark:text-white/80">
             {t("last_method")}
           </Badge>
         )}

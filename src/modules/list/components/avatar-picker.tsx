@@ -40,7 +40,7 @@ export const AvatarPicker = ({ list }: AvatarPickerProps) => {
   };
 
   return (
-    <div className={cn("relative flex size-8 items-center justify-center rounded-lg", getColor(colorActive as Color))}>
+    <div className={cn("relative flex size-8 items-center justify-center rounded-lg shrink-0", getColor(colorActive as Color))}>
       <Icon name={iconActive as IconName} className="size-4" />
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
