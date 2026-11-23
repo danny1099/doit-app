@@ -63,10 +63,8 @@ export const ListsWidget = () => {
     <div className="bg-accent mt-10 flex max-h-56 flex-col rounded-lg px-2 py-3">
       <P className="text-foreground text-3xs ml-1 font-medium">{t("title")}</P>
       <div className="flex w-full flex-row items-center gap-1 pr-1">
-        <span className="text-4xs text-muted-foreground ml-1">{t("widget")}</span>
-        <Tooltip text={t("add-button")}>
-          <WidgetListButton className="ml-auto" />
-        </Tooltip>
+        <span className="text-4xs text-foreground/70 ml-1">{t("widget")}</span>
+        <WidgetListButton className="ml-auto" />
       </div>
 
       <ul className="border-border mx-4 my-2 flex max-h-16 min-h-2 w-full min-w-0.5 translate-x-px flex-col gap-1 border-l px-2 py-0.5">

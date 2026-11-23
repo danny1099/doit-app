@@ -1356,7 +1356,7 @@
       "subtitle": "It looks like there are no tasks matching your search."
     },
     "table": {
-      "title": "Task",
+      "title": "Title",
       "priority": "Priority",
       "status": "Status",
       "createdAt": "Created At"
