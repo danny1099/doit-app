@@ -4,6 +4,27 @@ import { IconName } from "@/shared/components";
 
 export const taskStatuses: TaskStatus[] = ["INBOX", "TODO", "IN_PROGRESS", "BLOCKED", "DONE", "ARCHIVED"];
 
+export type TaskTableColumnId = "title" | "status" | "priority" | "createdAt";
+
+export interface TaskTableColumnLayout {
+  id: TaskTableColumnId;
+  width: number;
+}
+
+export interface TaskTableLayout {
+  order: TaskTableColumnId[];
+  widths: Partial<Record<TaskTableColumnId, number>>;
+}
+
+export const DEFAULT_TASK_TABLE_COLUMNS: TaskTableColumnLayout[] = [
+  { id: "title", width: 420 },
+  { id: "status", width: 70 },
+  { id: "priority", width: 80 },
+  { id: "createdAt", width: 90 },
+];
+
+export const TASK_TABLE_MIN_COLUMN_WIDTH = 50;
+
 /* types i18n translation for task view picker */
 export type TaskViewsT = ReturnType<typeof useTranslations<"tasks.views">>;
 export type TaskPriorityT = ReturnType<typeof useTranslations<"tasks.priority">>;

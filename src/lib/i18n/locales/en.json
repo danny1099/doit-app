@@ -342,7 +342,6 @@
       "content": "Your workspace has been deleted. Let´s create another one 🚀"
     }
   },
-
   "lang": {
     "tooltip": "Language",
     "locales": {
@@ -359,7 +358,6 @@
     "title": "Just a moment",
     "description": "We are organizing some things for you"
   },
-
   "menu": {
     "platform": "Platform",
     "items": {
@@ -377,7 +375,6 @@
       "title": "Your organizations"
     }
   },
-
   "marketing": {
     "title": "Welcome to DoIt",
     "description": "DoIt is a task manager that makes organization simple, visual, and powerful. Get started today and take control of your tasks!",
@@ -407,10 +404,22 @@
           "scheduled": "Scheduled"
         },
         "tasks": {
-          "deck": { "title": "Finish the pitch deck", "meta": "Today" },
-          "email": { "title": "Email Sarah about the offsite", "meta": "Today" },
-          "errand": { "title": "Pick up the dry cleaning", "meta": "Near the office" },
-          "review": { "title": "Review the Q3 numbers", "meta": "Tomorrow · 9:00" }
+          "deck": {
+            "title": "Finish the pitch deck",
+            "meta": "Today"
+          },
+          "email": {
+            "title": "Email Sarah about the offsite",
+            "meta": "Today"
+          },
+          "errand": {
+            "title": "Pick up the dry cleaning",
+            "meta": "Near the office"
+          },
+          "review": {
+            "title": "Review the Q3 numbers",
+            "meta": "Tomorrow · 9:00"
+          }
         }
       }
     },
@@ -488,7 +497,12 @@
           "period": "forever",
           "description": "Everything you need to capture and finish your first tasks.",
           "cta": "Get started",
-          "features": ["Unlimited tasks", "Quick Capture", "Daily Focus", "One workspace"]
+          "features": [
+            "Unlimited tasks",
+            "Quick Capture",
+            "Daily Focus",
+            "One workspace"
+          ]
         },
         "pro": {
           "name": "Pro",
@@ -537,7 +551,6 @@
       "description": "DoIt is a task manager that makes organization simple, visual, and powerful. Get started today and take control of your tasks!"
     }
   },
-
   "legal": {
     "common": {
       "eyebrow": "Legal",
@@ -675,7 +688,9 @@
         {
           "id": "contact",
           "title": "Contact",
-          "paragraphs": ["If you have questions about these Terms, contact us at support@doit.app."]
+          "paragraphs": [
+            "If you have questions about these Terms, contact us at support@doit.app."
+          ]
         }
       ]
     },
@@ -785,7 +800,9 @@
         {
           "id": "contact",
           "title": "Contact",
-          "paragraphs": ["For privacy questions or requests, contact us at privacy@doit.app."]
+          "paragraphs": [
+            "For privacy questions or requests, contact us at privacy@doit.app."
+          ]
         }
       ]
     },
@@ -867,7 +884,9 @@
         {
           "id": "contact",
           "title": "Contact",
-          "paragraphs": ["Questions about data usage can be sent to privacy@doit.app."]
+          "paragraphs": [
+            "Questions about data usage can be sent to privacy@doit.app."
+          ]
         }
       ]
     },
@@ -924,12 +943,13 @@
         {
           "id": "contact",
           "title": "Contact",
-          "paragraphs": ["For questions about our use of cookies, contact us at privacy@doit.app."]
+          "paragraphs": [
+            "For questions about our use of cookies, contact us at privacy@doit.app."
+          ]
         }
       ]
     }
   },
-
   "sign_up": {
     "title": "Plan it. Do it.",
     "description": "Turn messy thoughts into clear tasks and know exactly what to focus on today.",
@@ -969,7 +989,6 @@
       "description": "Get started with Doit, the task manager that organizes your to-dos for you."
     }
   },
-
   "sign_in": {
     "title": "Focus it. Finish it.",
     "description": "Sign in to see today's focus and pick up right where you left off.",
@@ -998,7 +1017,6 @@
       "description": "Sign in to your Doit account and get back to your tasks."
     }
   },
-
   "forgot_password": {
     "title": "Reset it. Get back to it.",
     "description": "Set a new password and you'll be back to your tasks in a minute.",
@@ -1058,7 +1076,6 @@
       "description": "Forgot your password? No worries, we'll get you back in."
     }
   },
-
   "pwa": {
     "update_available": {
       "title": "New version available",
@@ -1066,7 +1083,6 @@
       "action": "Update"
     }
   },
-
   "organization": {
     "title": "Organizations",
     "description": "Keep your projects organized in separate spaces, each with its own tasks and views.",
@@ -1094,7 +1110,10 @@
       "cancel": "Cancel"
     },
     "form": {
-      "name": { "label": "Organization name", "placeholder": "e.g. Acme, Dale Inc" },
+      "name": {
+        "label": "Organization name",
+        "placeholder": "e.g. Acme, Dale Inc"
+      },
       "description": {
         "label": "Description",
         "placeholder": "What does your organization do?"
@@ -1128,7 +1147,6 @@
       "apply": "I want this symbol"
     }
   },
-
   "invitation": {
     "invite-message": "<mark>name</mark> it invites you to join",
     "join-to": "<strong>organization</strong> as a {role}",
@@ -1138,7 +1156,6 @@
     "accept": "Accept invitation",
     "decline": "Decline"
   },
-
   "onboarding": {
     "title": "Let's get you set up",
     "description": "A few quick steps and Doit will be ready to roll.",
@@ -1185,9 +1202,18 @@
       }
     },
     "form": {
-      "name": { "label": "Full name", "placeholder": "e.g. Martina García" },
-      "email": { "label": "Email", "placeholder": "The email you used to sign up" },
-      "workspace": { "label": "Workspace name", "placeholder": "e.g. Acme, Home, Investigation" },
+      "name": {
+        "label": "Full name",
+        "placeholder": "e.g. Martina García"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "The email you used to sign up"
+      },
+      "workspace": {
+        "label": "Workspace name",
+        "placeholder": "e.g. Acme, Home, Investigation"
+      },
       "continue": "Let's keep going",
       "submit-button": "Set up my account",
       "previous": "Go back"
@@ -1197,7 +1223,6 @@
       "description": "Let's get you set up — it'll only take a minute."
     }
   },
-
   "workspaces": {
     "title": "Workspaces",
     "description": "Everything you need to organize your task and projects.",
@@ -1224,7 +1249,10 @@
     },
     "no-results": "No results found",
     "form": {
-      "name": { "label": "Workspace name", "placeholder": "e.g. Acme, Home, Investigation" },
+      "name": {
+        "label": "Workspace name",
+        "placeholder": "e.g. Acme, Home, Investigation"
+      },
       "description": {
         "label": "Description",
         "placeholder": "Describe your what your workspace does and what makes it unique"
@@ -1262,7 +1290,6 @@
       "apply": "I want this symbol"
     }
   },
-
   "lists": {
     "title": "Lists",
     "widget": "This is all the lists you have created",
@@ -1340,7 +1367,6 @@
       "description": "All your lists will be listed here. You can create new ones or update existing ones."
     }
   },
-
   "tasks": {
     "title": "Tasks",
     "description": "Everything in the right place. Organize and focus on what matters today.",
@@ -1359,7 +1385,9 @@
       "title": "Title",
       "priority": "Priority",
       "status": "Status",
-      "createdAt": "Event Date"
+      "createdAt": "Event Date",
+      "reorder_column": "Reorder {column}",
+      "resize_column": "Resize {column}"
     },
     "priority": {
       "low": "Low",
