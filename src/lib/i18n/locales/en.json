@@ -1359,7 +1359,7 @@
       "title": "Title",
       "priority": "Priority",
       "status": "Status",
-      "createdAt": "Created At"
+      "createdAt": "Event Date"
     },
     "priority": {
       "low": "Low",

@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import { useParams } from "next/navigation";
 import { I18nMessage, useTranslations } from "next-intl";
 import { zodResolver } from "@hookform/resolvers/zod";
-import type { List } from "@prisma/client";
 import { useModal, useToast } from "@/shared/hooks";
 import {
   Button,

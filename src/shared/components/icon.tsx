@@ -105,6 +105,8 @@ export const iconName = {
   table: "table",
   kanban: "kanban",
   list: "view-list",
+  flag: "flag",
+  flag_fill: "flag-fill",
 };
 
 export type IconName = keyof typeof iconName;

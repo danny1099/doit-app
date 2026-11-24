@@ -4,9 +4,10 @@ import { useTranslations } from "next-intl";
 import type { Task, TaskPriority, TaskStatus } from "@prisma/client";
 import { useTableSelection } from "@/shared/hooks";
 import { defineColumns, capitalize, cn } from "@/shared/utils";
-import { AnimatedContent, Badge, Checkbox, EmptyData } from "@/shared/components";
+import { AnimatedContent, Badge, Checkbox, EmptyData, Icon } from "@/shared/components";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/shared/components/table";
-import { NewTaskButton } from "@/modules/task/components";
+import { taskPriorities } from "@/modules/task/types";
+import { NewTaskButton, PriorityToggle } from "@/modules/task/components";
 
 interface ViewTableProps {
   tasks: Task[];
@@ -15,13 +16,6 @@ interface ViewTableProps {
 
 export const TaskViewTable = ({ tasks, className }: ViewTableProps) => {
   const t = useTranslations("tasks");
-
-  const priorityLabels: Record<TaskPriority, string> = {
-    LOW: t("priority.low"),
-    MEDIUM: t("priority.medium"),
-    HIGH: t("priority.high"),
-    URGENT: t("priority.urgent"),
-  };
 
   const statusLabels: Record<TaskStatus, string> = {
     INBOX: t("status.inbox"),
@@ -34,12 +28,12 @@ export const TaskViewTable = ({ tasks, className }: ViewTableProps) => {
 
   /* define table columns for table component */
   const columnsNames = defineColumns<Task>({
-    title: { style: "w-auto", format: (name) => String(name) },
-    priority: { style: "w-fit", format: (slug) => String(slug) },
+    title: { style: "w-xl", format: (name) => String(name) },
     status: { style: "w-fit", format: (role) => capitalize(role as string) },
+    priority: { style: "w-fit", format: (slug) => String(slug) },
     createdAt: {
       style: "w-fit",
-      format: (date) => moment(date as Date).fromNow(),
+      format: (date) => moment(date as Date).format("YYYY-MM-DD"),
     },
   });
 
@@ -69,7 +63,6 @@ export const TaskViewTable = ({ tasks, className }: ViewTableProps) => {
                     {t(`table.${column}`)}
                   </TableHead>
                 ))}
-                <TableHead className="w-fit" />
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -87,10 +80,11 @@ export const TaskViewTable = ({ tasks, className }: ViewTableProps) => {
                       />
                     </TableCell>
                     {columnsNames.map(({ column, format, style }) => {
+                      const priorityField = taskPriorities[task.priority];
                       return (
                         <TableCell key={column} className={cn("text-foreground/80 text-2xs", style)}>
                           {column !== "priority" && column !== "status" && format(task[column])}
-                          {column === "priority" && (priorityLabels[task.priority] || capitalize(task.priority))}
+                          {column === "priority" && <PriorityToggle task={task} />}
                           {column === "status" && (
                             <Badge variant="outline" className="text-3xs w-fit">
                               {statusLabels[task.status] || capitalize(task.status)}
