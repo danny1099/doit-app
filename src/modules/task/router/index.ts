@@ -2,6 +2,7 @@ import type { Task } from "@prisma/client";
 import { authedProcedure, param, router } from "@/trpc/init";
 import { tryCatch } from "@/shared/utils";
 import { taskSchemaCreate, taskSchemaUpdate } from "@/modules/task/schema";
+import { TaskWithData } from "@/modules/task/types";
 
 export const taskRouter = router({
   create: authedProcedure.input(taskSchemaCreate).mutation<APIResult<Task>>(async ({ ctx, input }) => {
@@ -43,7 +44,7 @@ export const taskRouter = router({
           content: content || null,
           priority: priority || "MEDIUM",
           type: type || "DIGITAL",
-          status: status || "INBOX",
+          status: status || "TODO",
           dueDate: parsedDueDate,
           listId: list.id,
           workspaceId: list.workspaceId,
@@ -67,38 +68,6 @@ export const taskRouter = router({
       data,
       status: "success",
       message: "task_created",
-      code: 200,
-    };
-  }),
-
-  getByList: authedProcedure.input(param).query<APIResult<Task[]>>(async ({ ctx, input }) => {
-    const { param: listId } = input;
-
-    const { data, error } = await tryCatch(
-      ctx.db.task.findMany({
-        where: {
-          listId,
-          userId: ctx.userId,
-          ...(ctx.organizationId ? { workspace: { organizationId: ctx.organizationId } } : {}),
-        },
-        orderBy: { createdAt: "desc" },
-      })
-    );
-
-    if (error || !data) {
-      return {
-        data: null,
-        status: "error",
-        message: "unknown_error",
-        errorMessage: error?.message,
-        code: 500,
-      };
-    }
-
-    return {
-      data,
-      status: "success",
-      message: null,
       code: 200,
     };
   }),
@@ -234,6 +203,38 @@ export const taskRouter = router({
       data,
       status: "success",
       message: "task_deleted",
+      code: 200,
+    };
+  }),
+
+  getByList: authedProcedure.input(param).query<APIResult<Task[]>>(async ({ ctx, input }) => {
+    const { param: listId } = input;
+
+    const { data, error } = await tryCatch(
+      ctx.db.task.findMany({
+        where: {
+          listId,
+          userId: ctx.userId,
+          ...(ctx.organizationId ? { workspace: { organizationId: ctx.organizationId } } : {}),
+        },
+        orderBy: { createdAt: "desc" },
+      })
+    );
+
+    if (error || !data) {
+      return {
+        data: null,
+        status: "error",
+        message: "unknown_error",
+        errorMessage: error?.message,
+        code: 500,
+      };
+    }
+
+    return {
+      data,
+      status: "success",
+      message: null,
       code: 200,
     };
   }),

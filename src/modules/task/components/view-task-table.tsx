@@ -10,7 +10,7 @@ import { AnimatedContent, Badge, Checkbox, EmptyData } from "@/shared/components
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/shared/components/table";
 import { TASK_TABLE_MIN_COLUMN_WIDTH, type TaskTableColumnId, type TaskTableColumnLayout } from "@/modules/task/types";
 import { getDefaultTaskTableLayout, getStoredTaskTableLayout, saveTaskTableLayout } from "@/modules/task/utils";
-import { NewTaskButton, PriorityToggle } from "@/modules/task/components";
+import { NewTaskButton, PriorityToggle, StatusButton } from "@/modules/task/components";
 
 interface ViewTableProps {
   tasks: Task[];
@@ -49,7 +49,6 @@ export const TaskViewTable = ({ tasks, className }: ViewTableProps) => {
   };
 
   const statusLabels: Record<TaskStatus, string> = {
-    INBOX: t("status.inbox"),
     TODO: t("status.todo"),
     IN_PROGRESS: t("status.in_progress"),
     BLOCKED: t("status.blocked"),
@@ -135,11 +134,7 @@ export const TaskViewTable = ({ tasks, className }: ViewTableProps) => {
     }
 
     if (columnId === "status") {
-      return (
-        <Badge variant="outline" className="text-3xs w-fit">
-          {statusLabels[task.status] || capitalize(task.status)}
-        </Badge>
-      );
+      return <StatusButton task={task} />;
     }
 
     if (columnId === "priority") {
@@ -157,7 +152,7 @@ export const TaskViewTable = ({ tasks, className }: ViewTableProps) => {
             title={t("empty.title")}
             subtitle={t("empty.subtitle")}
             icon="task"
-            ctaButton={<NewTaskButton className="md:w-fit" />}
+            ctaButton={<NewTaskButton className="my-auto md:w-fit" />}
           />
         ) : (
           <Table className="table-fixed">

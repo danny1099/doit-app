@@ -497,12 +497,7 @@
           "period": "forever",
           "description": "Everything you need to capture and finish your first tasks.",
           "cta": "Get started",
-          "features": [
-            "Unlimited tasks",
-            "Quick Capture",
-            "Daily Focus",
-            "One workspace"
-          ]
+          "features": ["Unlimited tasks", "Quick Capture", "Daily Focus", "One workspace"]
         },
         "pro": {
           "name": "Pro",
@@ -688,9 +683,7 @@
         {
           "id": "contact",
           "title": "Contact",
-          "paragraphs": [
-            "If you have questions about these Terms, contact us at support@doit.app."
-          ]
+          "paragraphs": ["If you have questions about these Terms, contact us at support@doit.app."]
         }
       ]
     },
@@ -800,9 +793,7 @@
         {
           "id": "contact",
           "title": "Contact",
-          "paragraphs": [
-            "For privacy questions or requests, contact us at privacy@doit.app."
-          ]
+          "paragraphs": ["For privacy questions or requests, contact us at privacy@doit.app."]
         }
       ]
     },
@@ -884,9 +875,7 @@
         {
           "id": "contact",
           "title": "Contact",
-          "paragraphs": [
-            "Questions about data usage can be sent to privacy@doit.app."
-          ]
+          "paragraphs": ["Questions about data usage can be sent to privacy@doit.app."]
         }
       ]
     },
@@ -943,9 +932,7 @@
         {
           "id": "contact",
           "title": "Contact",
-          "paragraphs": [
-            "For questions about our use of cookies, contact us at privacy@doit.app."
-          ]
+          "paragraphs": ["For questions about our use of cookies, contact us at privacy@doit.app."]
         }
       ]
     }
@@ -1396,13 +1383,13 @@
       "urgent": "Urgent"
     },
     "status": {
-      "inbox": "Inbox",
       "todo": "To do",
       "in_progress": "In progress",
       "blocked": "Blocked",
       "done": "Done",
       "archived": "Archived"
     },
+    "status_groups": { "pending": "Pending", "in_progress": "In progress", "completed": "Complete" },
     "form": {
       "list": {
         "label": "List"

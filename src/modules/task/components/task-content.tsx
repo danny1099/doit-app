@@ -21,7 +21,7 @@ export const TaskContent = () => {
   );
 
   return (
-    <article className="flex w-full flex-col">
+    <article className="flex size-full flex-col">
       <div className="flex h-fit w-full flex-row items-center justify-between gap-2 py-0.5">
         <ViewToggle />
         <div className="flex h-fit flex-row items-center gap-1 px-4">

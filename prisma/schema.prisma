@@ -205,7 +205,6 @@ model Workspace {
   tasks    Task[]
   lists    List[]
   projects Project[]
-  tags     Tag[]
 
   @@index([organizationId])
   @@map("workspace")
@@ -239,6 +238,7 @@ model List {
 
   tasks    Task[]
   projects Project[]
+  tags     Tag[]
 
   @@index([workspaceId, userId])
   @@index([mode])
@@ -253,7 +253,6 @@ enum TaskType {
 }
 
 enum TaskStatus {
-  INBOX
   TODO
   IN_PROGRESS
   BLOCKED
@@ -274,7 +273,7 @@ model Task {
   content          String?
   rawInput         String?
   type             TaskType     @default(DIGITAL)
-  status           TaskStatus   @default(INBOX)
+  status           TaskStatus   @default(TODO)
   priority         TaskPriority @default(MEDIUM)
   dueDate          DateTime?
   scheduledAt      DateTime?
@@ -332,16 +331,17 @@ model Project {
 }
 
 model Tag {
-  id          String   @id @default(uuid())
-  name        String
-  color       String?
-  workspaceId String
-  createdAt   DateTime @default(now())
+  id        String   @id @default(uuid())
+  name      String
+  icon      String?
+  listId    String
+  createdAt DateTime @default(now())
 
-  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
-  taskTags  TaskTag[]
+  list List @relation(fields: [listId], references: [id], onDelete: Cascade)
 
-  @@unique([workspaceId, name])
+  taskTags TaskTag[]
+
+  @@unique([listId, name])
   @@map("tags")
 }
 

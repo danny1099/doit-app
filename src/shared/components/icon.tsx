@@ -107,6 +107,11 @@ export const iconName = {
   list: "view-list",
   flag: "flag",
   flag_fill: "flag-fill",
+  pending: "clock",
+  in_progres: "pencil-square",
+  archive: "archive",
+  bloqued: "signpost-split",
+  complete: "check2-all",
 };
 
 export type IconName = keyof typeof iconName;
